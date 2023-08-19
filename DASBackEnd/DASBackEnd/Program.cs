@@ -24,6 +24,9 @@ builder.Services.AddScoped<IBookingRepository, BookingRepository>();
 builder.Services.AddScoped<ISlotServices, SlotServices>();
 builder.Services.AddScoped<ISlotRepository, SlotRepository>();
 
+builder.Services.AddScoped<IDaServices, DaServices>();
+builder.Services.AddScoped<IServicesRepository, DaServicesRepository>();
+
 builder.Services.AddScoped<IBookingDetailRepository, BookingDetailRepository>();
 
 var app = builder.Build();

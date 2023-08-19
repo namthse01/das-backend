@@ -1,4 +1,5 @@
 ﻿using DASBackEnd.Data;
+using DASBackEnd.DTO;
 using DASBackEnd.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -30,6 +31,22 @@ namespace DASBackEnd.Controllers
             else
             {
                 return await _DasContext.Accounts.ToListAsync();
+            }
+
+        }
+
+
+        [HttpPost]
+        [Route("Login")]
+        public async Task<ActionResult<IEnumerable<Account>>> Login(loginDTO loginDTO)
+        {
+            if (_DasContext == null)
+            {
+                return BadRequest(new { Message = "Can not login" });
+            }
+            else
+            {
+                return await _DasContext.Accounts.Where(x => x.Username == loginDTO.Username && x.Password == loginDTO.Password).ToListAsync();
             }
 
         }
