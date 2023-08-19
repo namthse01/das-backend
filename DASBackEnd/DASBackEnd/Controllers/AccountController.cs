@@ -20,12 +20,27 @@ namespace DASBackEnd.Controllers
         }
 
         [HttpGet]
+        [Route("GetAllUser")]
+        public async Task<ActionResult<IEnumerable<Account>>> GetAllUser()
+        {
+            if (_DasContext == null)
+            {
+                return BadRequest(new { Message = "Can not get all user information " });
+            }
+            else
+            {
+                return await _DasContext.Accounts.ToListAsync();
+            }
+
+        }
+
+        [HttpGet]
         [Route("GetAllCustomer")]
         public async Task<ActionResult<IEnumerable<Account>>> GetAllCustomer()
         {
             if (_DasContext == null)
             {
-                return BadRequest(new { Message = "Can not get all services information " });
+                return BadRequest(new { Message = "Can not get all customer information " });
             }
             else
             {
@@ -40,7 +55,22 @@ namespace DASBackEnd.Controllers
         {
             if (_DasContext == null)
             {
-                return BadRequest(new { Message = "Can not get all services information " });
+                return BadRequest(new { Message = "Can not get all doctors information " });
+            }
+            else
+            {
+                return await _DasContext.Accounts.Where(x => x.RoleId == 4).ToListAsync();
+            }
+
+        }
+
+        [HttpGet]
+        [Route("GetAllManager")]
+        public async Task<ActionResult<IEnumerable<Account>>> GetAllMânger()
+        {
+            if (_DasContext == null)
+            {
+                return BadRequest(new { Message = "Can not get all manager information " });
             }
             else
             {

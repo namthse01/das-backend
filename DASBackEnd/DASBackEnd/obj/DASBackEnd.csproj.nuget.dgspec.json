@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Source 2\\Lịch nha khoa\\backup\\SWP3W\\DASBackEnd\\DASBackEnd\\DASBackEnd.csproj": {}
+    "D:\\Source 2\\Lịch nha khoa\\back-end\\DASBackEnd\\DASBackEnd\\DASBackEnd.csproj": {}
   },
   "projects": {
-    "D:\\Source 2\\Lịch nha khoa\\backup\\SWP3W\\DASBackEnd\\DASBackEnd\\DASBackEnd.csproj": {
+    "D:\\Source 2\\Lịch nha khoa\\back-end\\DASBackEnd\\DASBackEnd\\DASBackEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Source 2\\Lịch nha khoa\\backup\\SWP3W\\DASBackEnd\\DASBackEnd\\DASBackEnd.csproj",
+        "projectUniqueName": "D:\\Source 2\\Lịch nha khoa\\back-end\\DASBackEnd\\DASBackEnd\\DASBackEnd.csproj",
         "projectName": "DASBackEnd",
-        "projectPath": "D:\\Source 2\\Lịch nha khoa\\backup\\SWP3W\\DASBackEnd\\DASBackEnd\\DASBackEnd.csproj",
+        "projectPath": "D:\\Source 2\\Lịch nha khoa\\back-end\\DASBackEnd\\DASBackEnd\\DASBackEnd.csproj",
         "packagesPath": "C:\\Users\\MSI\\.nuget\\packages\\",
-        "outputPath": "D:\\Source 2\\Lịch nha khoa\\backup\\SWP3W\\DASBackEnd\\DASBackEnd\\obj\\",
+        "outputPath": "D:\\Source 2\\Lịch nha khoa\\back-end\\DASBackEnd\\DASBackEnd\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MSI\\AppData\\Roaming\\NuGet\\NuGet.Config",
