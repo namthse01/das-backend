@@ -21,6 +21,9 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("DAS")));
 builder.Services.AddScoped<IBookingServices, BookingServices>();
 builder.Services.AddScoped<IBookingRepository, BookingRepository>();
 
+builder.Services.AddScoped<ISlotServices, SlotServices>();
+builder.Services.AddScoped<ISlotRepository, SlotRepository>();
+
 builder.Services.AddScoped<IBookingDetailRepository, BookingDetailRepository>();
 
 var app = builder.Build();

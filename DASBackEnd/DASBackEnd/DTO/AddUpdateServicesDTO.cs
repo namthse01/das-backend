@@ -1,6 +1,6 @@
 ﻿namespace DASBackEnd.DTO
 {
-    public class CustomerGetAllSlotDTO
+    public class AddServicesDTO
     {
     }
 }

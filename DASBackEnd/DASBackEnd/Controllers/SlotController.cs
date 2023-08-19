@@ -1,4 +1,6 @@
 ﻿using DASBackEnd.Data;
+using DASBackEnd.DTO;
+using DASBackEnd.IServices;
 using DASBackEnd.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,12 +12,13 @@ namespace DASBackEnd.Controllers
     [ApiController]
     public class SlotController : ControllerBase
     {
+        private ISlotServices _IslotServices;
         private readonly DasContext _DasContext;
-        public SlotController(DasContext DasContext)
+        public SlotController(DasContext DasContext, ISlotServices slotServices)
         {
 
             this._DasContext = DasContext;
-
+            _IslotServices = slotServices;
         }
 
         [HttpGet]
@@ -53,18 +56,18 @@ namespace DASBackEnd.Controllers
 
         [HttpPost]
         [Route("AddDoctorToSlot")]
-        public async Task<ActionResult<IEnumerable<Slot>>> AddDoctor(List<Slot> objSlot)
+        public async Task<IActionResult> adddoctorToSlot(DoctorToSlotDTO doctorToSlotDTO)
         {
-            if (objSlot.Count > 6)
+            try
             {
-                return BadRequest(new { Message = "Can not add more than 6 slot" });
+                await _IslotServices.CreateSlotAsync(doctorToSlotDTO);
+                return Ok();
             }
-            foreach (var slot in objSlot)
+            catch (Exception)
             {
-                await _DasContext.Slots.AddAsync(slot);
-                await _DasContext.SaveChangesAsync();
+                return BadRequest("Can not add doctor to slot please try again. ");
+
             }
-            return Ok();
         }
 
     }
