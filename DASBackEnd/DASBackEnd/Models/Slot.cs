@@ -7,15 +7,13 @@ public partial class Slot
 {
     public int Id { get; set; }
 
-    public DateTime? DateStart { get; set; }
-
-    public DateTime? DateEnd { get; set; }
-
     public int? SlotNo { get; set; }
 
     public string? SlotStatus { get; set; }
 
     public DateTime? Date { get; set; }
+
+    public string? DayInWeek { get; set; }
 
     public int? AccountId { get; set; }
 

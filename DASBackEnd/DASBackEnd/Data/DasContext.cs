@@ -37,11 +37,11 @@ public partial class DasContext : DbContext
     {
         modelBuilder.Entity<Account>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Account__3214EC2769C23141");
+            entity.HasKey(e => e.Id).HasName("PK__Account__3214EC27AF8E7CDF");
 
             entity.ToTable("Account");
 
-            entity.HasIndex(e => e.Username, "UQ__Account__536C85E4A3117A27").IsUnique();
+            entity.HasIndex(e => e.Username, "UQ__Account__536C85E4A6437838").IsUnique();
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.AccountStatus)
@@ -70,7 +70,7 @@ public partial class DasContext : DbContext
 
         modelBuilder.Entity<Booking>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Booking__3214EC27543D405C");
+            entity.HasKey(e => e.Id).HasName("PK__Booking__3214EC27631E1554");
 
             entity.ToTable("Booking");
 
@@ -94,7 +94,7 @@ public partial class DasContext : DbContext
 
         modelBuilder.Entity<BookingDetail>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__BookingD__3214EC278BB18850");
+            entity.HasKey(e => e.Id).HasName("PK__BookingD__3214EC2705285C7C");
 
             entity.ToTable("BookingDetail");
 
@@ -113,7 +113,7 @@ public partial class DasContext : DbContext
 
         modelBuilder.Entity<Daservice>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__DAServic__3214EC27643DF492");
+            entity.HasKey(e => e.Id).HasName("PK__DAServic__3214EC27480B9985");
 
             entity.ToTable("DAServices");
 
@@ -144,7 +144,7 @@ public partial class DasContext : DbContext
 
         modelBuilder.Entity<Role>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Roles__3214EC2792719854");
+            entity.HasKey(e => e.Id).HasName("PK__Roles__3214EC273C9B6911");
 
             entity.Property(e => e.Id)
                 .ValueGeneratedNever()
@@ -157,7 +157,7 @@ public partial class DasContext : DbContext
 
         modelBuilder.Entity<Slot>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Slot__3214EC277CF07140");
+            entity.HasKey(e => e.Id).HasName("PK__Slot__3214EC27AF8ECC69");
 
             entity.ToTable("Slot");
 
@@ -166,12 +166,11 @@ public partial class DasContext : DbContext
             entity.Property(e => e.Date)
                 .HasColumnType("datetime")
                 .HasColumnName("date");
-            entity.Property(e => e.DateEnd)
-                .HasColumnType("datetime")
-                .HasColumnName("dateEnd");
-            entity.Property(e => e.DateStart)
-                .HasColumnType("datetime")
-                .HasColumnName("dateStart");
+            entity.Property(e => e.DayInWeek)
+                .HasMaxLength(100)
+                .IsUnicode(false)
+                .HasColumnName("dayInWeek");
+            entity.Property(e => e.SlotNo).HasColumnName("slotNo");
             entity.Property(e => e.SlotStatus)
                 .HasMaxLength(100)
                 .IsUnicode(false)
@@ -184,7 +183,7 @@ public partial class DasContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Users__3214EC27F70EE32E");
+            entity.HasKey(e => e.Id).HasName("PK__Users__3214EC27E0F4F744");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.Descriptions).HasMaxLength(100);
