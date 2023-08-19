@@ -129,61 +129,13 @@ VALUES('Hygeine & Periodontal Health',
 3000000,3500000,5000000,1)
 
 INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
-VALUES(1,'Open',8/21/2023,'Mon',5)
+VALUES(1,'Open',21/8/2023,'Mon',5)
 
 INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
-VALUES(2,'Open',8/21/2023,'Mon',5)
+VALUES(2,'Open',21/8/2023,'Mon',5)
 
 INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
-VALUES(3,'Open',8/21/2023,'Mon',5)
+VALUES(3,'Open',21/8/2023,'Mon',5)
 
 INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
-VALUES(4,'Open',8/21/2023,'Mon',5)
-
-INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
-VALUES(1,'Open',8/22/2023,'Tue',6)
-
-INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
-VALUES(2,'Open',8/22/2023,'Tue',6)
-
-INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
-VALUES(3,'Open',8/22/2023,'Tue',6)
-
-INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
-VALUES(4,'Open',8/22/2023,'Tue',6)
-
-INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
-VALUES(1,'Open',8/23/2023,'Wes',7)
-
-INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
-VALUES(2,'Open',8/23/2023,'Wes',7)
-
-INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
-VALUES(3,'Open',8/23/2023,'Wes',7)
-
-INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
-VALUES(4,'Open',8/23/2023,'Wes',7)
-
-INSERT INTO Slot(SlotNo,slotStatus, date, dayInWeek, accountId)
-VALUES(1,'Open',8/24/2023,'Thu',8)
-
-INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
-VALUES(2,'Open',8/24/2023,'Thu',8)
-
-INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
-VALUES(3,'Open',8/24/2023,'Thu',8)
-
-INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
-VALUES(4,'Open',8/24/2023,'Thu',8)
-
-INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
-VALUES(1,'Open',8/25/2023,'Fri',9)
-
-INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
-VALUES(2,'Open',8/25/2023,'Fri',9)
-
-INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
-VALUES(3,'Open',8/25/2023,'Fri',9)
-
-INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
-VALUES(4,'Open',8/25/2023,'Fri',9)
+VALUES(4,'Open',21/8/2023,'Mon',5)
