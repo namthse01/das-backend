@@ -12,7 +12,7 @@ CREATE TABLE Booking( ID INT IDENTITY(1,1) PRIMARY KEY, CustomerName NVARCHAR(10
 
 CREATE TABLE BookingDetail (ID INT IDENTITY(1,1) PRIMARY KEY, bookingId INT, serviceId INT)
 
-CREATE TABLE Slot (ID INT IDENTITY(1,1) PRIMARY KEY, slotStatus VARCHAR(100), date Datetime,dayInWeek VARCHAR(100) ,accountId INT)
+CREATE TABLE Slot (ID INT IDENTITY(1,1) PRIMARY KEY, slotNo INT,slotStatus VARCHAR(100), date Datetime,dayInWeek VARCHAR(100) ,accountId INT)
 
 CREATE TABLE Roles (ID INT PRIMARY KEY, roleName VARCHAR(100))
 
@@ -128,17 +128,62 @@ VALUES('Hygeine & Periodontal Health',
 'Invest in the well-being of your gums and smile with our Hygiene & Periodontal Health service at King''s Teeth Dental Clinic. Your comfort and oral health are our priorities, and we''re here to offer you the expertise and care needed to keep your gums in optimal condition. Schedule your appointment today to experience the benefits of a clean, healthy mouth that contributes to overall wellness and the confidence of a beautiful smile.',
 3000000,3500000,5000000,1)
 
-INSERT INTO Slot(slotStatus, date, dayInWeek, accountId)
-VALUES('Open',8/21/2023,'Mon',5)
+INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
+VALUES(1,'Open',8/21/2023,'Mon',5)
 
-INSERT INTO Slot(slotStatus, date, dayInWeek, accountId)
-VALUES('Open',8/22/2023,'Tue',6)
+INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
+VALUES(2,'Open',8/21/2023,'Mon',5)
 
-INSERT INTO Slot(slotStatus, date, dayInWeek, accountId)
-VALUES('Open',8/23/2023,'Wes',7)
+INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
+VALUES(3,'Open',8/21/2023,'Mon',5)
 
-INSERT INTO Slot(slotStatus, date, dayInWeek, accountId)
-VALUES('Open',8/24/2023,'Thu',8)
+INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
+VALUES(4,'Open',8/21/2023,'Mon',5)
 
-INSERT INTO Slot(slotStatus, date, dayInWeek, accountId)
-VALUES('Open',8/25/2023,'Fri',9)
+INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
+VALUES(1,'Open',8/22/2023,'Tue',6)
+
+INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
+VALUES(2,'Open',8/22/2023,'Tue',6)
+
+INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
+VALUES(3,'Open',8/22/2023,'Tue',6)
+
+INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
+VALUES(4,'Open',8/22/2023,'Tue',6)
+
+INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
+VALUES(1,'Open',8/23/2023,'Wes',7)
+
+INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
+VALUES(2,'Open',8/23/2023,'Wes',7)
+
+INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
+VALUES(3,'Open',8/23/2023,'Wes',7)
+
+INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
+VALUES(4,'Open',8/23/2023,'Wes',7)
+
+INSERT INTO Slot(SlotNo,slotStatus, date, dayInWeek, accountId)
+VALUES(1,'Open',8/24/2023,'Thu',8)
+
+INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
+VALUES(2,'Open',8/24/2023,'Thu',8)
+
+INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
+VALUES(3,'Open',8/24/2023,'Thu',8)
+
+INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
+VALUES(4,'Open',8/24/2023,'Thu',8)
+
+INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
+VALUES(1,'Open',8/25/2023,'Fri',9)
+
+INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
+VALUES(2,'Open',8/25/2023,'Fri',9)
+
+INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
+VALUES(3,'Open',8/25/2023,'Fri',9)
+
+INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
+VALUES(4,'Open',8/25/2023,'Fri',9)
