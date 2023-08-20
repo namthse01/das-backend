@@ -38,7 +38,7 @@ namespace DASBackEnd.Services
                 Contents = addUpdateServicesDTO.Contents,
                 AccountId = addUpdateServicesDTO.AccountId,
             };
-             _servicesRepository.UpdateServiceAsync(daservice);
+            _servicesRepository.UpdateServiceAsync(daservice);
         }
     }
 }

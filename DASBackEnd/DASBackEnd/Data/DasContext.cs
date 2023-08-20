@@ -37,11 +37,11 @@ public partial class DasContext : DbContext
     {
         modelBuilder.Entity<Account>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Account__3214EC27AF8E7CDF");
+            entity.HasKey(e => e.Id).HasName("PK__Account__3214EC27C434A02B");
 
             entity.ToTable("Account");
 
-            entity.HasIndex(e => e.Username, "UQ__Account__536C85E4A6437838").IsUnique();
+            entity.HasIndex(e => e.Username, "UQ__Account__536C85E4940C52C2").IsUnique();
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.AccountStatus)
@@ -70,7 +70,7 @@ public partial class DasContext : DbContext
 
         modelBuilder.Entity<Booking>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Booking__3214EC27631E1554");
+            entity.HasKey(e => e.Id).HasName("PK__Booking__3214EC272028B0D8");
 
             entity.ToTable("Booking");
 
@@ -81,6 +81,10 @@ public partial class DasContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("bookingStatus");
             entity.Property(e => e.CustomerName).HasMaxLength(100);
+            entity.Property(e => e.Gender).HasMaxLength(100);
+            entity.Property(e => e.PhoneNo)
+                .HasMaxLength(100)
+                .HasColumnName("phoneNo");
             entity.Property(e => e.SlotId).HasColumnName("slotId");
 
             entity.HasOne(d => d.Account).WithMany(p => p.Bookings)
@@ -94,7 +98,7 @@ public partial class DasContext : DbContext
 
         modelBuilder.Entity<BookingDetail>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__BookingD__3214EC2705285C7C");
+            entity.HasKey(e => e.Id).HasName("PK__BookingD__3214EC27E2398154");
 
             entity.ToTable("BookingDetail");
 
@@ -113,7 +117,7 @@ public partial class DasContext : DbContext
 
         modelBuilder.Entity<Daservice>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__DAServic__3214EC27480B9985");
+            entity.HasKey(e => e.Id).HasName("PK__DAServic__3214EC27499126FA");
 
             entity.ToTable("DAServices");
 
@@ -144,7 +148,7 @@ public partial class DasContext : DbContext
 
         modelBuilder.Entity<Role>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Roles__3214EC273C9B6911");
+            entity.HasKey(e => e.Id).HasName("PK__Roles__3214EC27C4DA27E5");
 
             entity.Property(e => e.Id)
                 .ValueGeneratedNever()
@@ -157,7 +161,7 @@ public partial class DasContext : DbContext
 
         modelBuilder.Entity<Slot>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Slot__3214EC27AF8ECC69");
+            entity.HasKey(e => e.Id).HasName("PK__Slot__3214EC2770939516");
 
             entity.ToTable("Slot");
 
@@ -183,7 +187,7 @@ public partial class DasContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Users__3214EC27E0F4F744");
+            entity.HasKey(e => e.Id).HasName("PK__Users__3214EC275812D442");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.Descriptions).HasMaxLength(100);

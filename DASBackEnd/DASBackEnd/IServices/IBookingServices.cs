@@ -10,5 +10,6 @@ namespace DASBackEnd.IServices
         public List<Booking> customerGetAllBooking(int id);
 
         public List<Booking> managerGetAllBooking();
+        public Booking updateBookStatusByBookingId(int bookingId, string bookingSttatus);
     }
 }

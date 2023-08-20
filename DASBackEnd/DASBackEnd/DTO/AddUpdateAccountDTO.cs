@@ -2,7 +2,7 @@
 {
     public class AddUpdateAccountDTO
     {
-        public int accountId { get;set; }
+        public int accountId { get; set; }
         public int UserId { get; set; }
 
         public string Username { get; set; }
@@ -13,8 +13,13 @@
 
         public string AccountStatus { get; set; }
 
-        public string? WorkingStatus { get; set; }
+        public string WorkingStatus { get; set; }
 
-        public AddUpdateUserDTO AddUpdateUserDTO { get; set; }
+        public string UserNamess { get; set; }
+
+        public string PhoneNum { get; set; }
+
+        public string Gender { get; set; }
+
     }
 }

@@ -19,25 +19,27 @@ namespace DASBackEnd.Services
         {
             User user = new User()
             {
-                UserName = addUpdateAccountDTO.AddUpdateUserDTO.UserName,
-                Gender = addUpdateAccountDTO.AddUpdateUserDTO.Gender,
-                PhoneNum = addUpdateAccountDTO.AddUpdateUserDTO.PhoneNum,
+                UserName = addUpdateAccountDTO.UserNamess,
+                Gender = addUpdateAccountDTO.Gender,
+                PhoneNum = addUpdateAccountDTO.PhoneNum,
             };
             await _UserRepository.CreateUser(user);
 
             Account account = new Account()
             {
-                UserId = user.Id,
-                Username= addUpdateAccountDTO.Username,
+                UserId = addUpdateAccountDTO.UserId,
+                Username = addUpdateAccountDTO.Username,
                 Password = addUpdateAccountDTO.Password,
-                WorkingStatus= addUpdateAccountDTO.WorkingStatus,
+                RoleId = addUpdateAccountDTO.RoleId,
+                WorkingStatus = addUpdateAccountDTO.WorkingStatus,
                 AccountStatus = addUpdateAccountDTO.AccountStatus,
-            }; 
-            _AccountRepository.createAccount(account);
+            };
+            await _AccountRepository.createAccount(account);
+
             return account;
         }
 
-        public AddUpdateAccountDTO updateAccountById(AddUpdateAccountDTO addUpdateAccountDTO)  
+        public AddUpdateAccountDTO updateAccountById(AddUpdateAccountDTO addUpdateAccountDTO)
         {
             Account account = _AccountRepository.findAccountById(addUpdateAccountDTO.accountId);
             account.Username = addUpdateAccountDTO.Username;
@@ -50,7 +52,7 @@ namespace DASBackEnd.Services
 
         public Account checkAccountExist(loginDTO loginDTO)
         {
-            Account account =_AccountRepository.checkAccountExist(loginDTO);
+            Account account = _AccountRepository.checkAccountExist(loginDTO);
             return account;
         }
     }

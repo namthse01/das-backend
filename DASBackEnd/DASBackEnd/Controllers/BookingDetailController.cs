@@ -21,8 +21,8 @@ namespace DASBackEnd.Controllers
 
         }
 
-/*
-        [HttpGet]
+
+/*        [HttpGet]
         [Route("GetBookingDetail/{id}")]
         public async Task<ActionResult<IEnumerable<bookingDTO>>> GetBookingDetail(int id)
         {
@@ -47,7 +47,7 @@ namespace DASBackEnd.Controllers
                     services = (List<Daservice>)_DasContext.Daservices.Where(x => x.Id == item.ServiceId);
                 }
                 List<servicesDTO> servicesDTO = new List<servicesDTO>();
-                foreach(var item in services)
+                foreach (var item in services)
                 {
                     servicesDTO = item;
                 }
@@ -57,12 +57,11 @@ namespace DASBackEnd.Controllers
                     customerName = booking.CustomerName,
                     slotID = slot.Id,
                     doctorName = doctor.UserName,
-                    doctorID = (int)slot.AccountId,   
+                    doctorID = (int)slot.AccountId,
                 };
 
             }
+        }*/
 
-        }
-*/
     }
 }

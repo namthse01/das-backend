@@ -8,7 +8,7 @@ CREATE TABLE Account( ID INT IDENTITY(1,1) PRIMARY KEY, userId INT, Username NVA
 
 CREATE TABLE DAServices( ID INT IDENTITY(1,1) PRIMARY KEY, ServiceName NVARCHAR(100), Intro NVARCHAR(1000), Contents NVARCHAR(1000), Outro NVARCHAR(1000), lowPrice DECIMAL(18,2), advancedPrice DECIMAL(18,2), topPrice DECIMAL(18,2), imgUrl VARCHAR(100), accountId INT)
 
-CREATE TABLE Booking( ID INT IDENTITY(1,1) PRIMARY KEY, CustomerName NVARCHAR(100), bookingStatus VARCHAR(100), accountId INT, slotId INT) 
+CREATE TABLE Booking( ID INT IDENTITY(1,1) PRIMARY KEY, CustomerName NVARCHAR(100), phoneNo NVARCHAR(100), Gender NVARCHAR(100),bookingStatus VARCHAR(100), accountId INT, slotId INT) 
 
 CREATE TABLE BookingDetail (ID INT IDENTITY(1,1) PRIMARY KEY, bookingId INT, serviceId INT)
 

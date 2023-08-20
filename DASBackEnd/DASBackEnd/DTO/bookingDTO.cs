@@ -2,7 +2,7 @@
 {
     public class bookingDTO
     {
-       
+
         public string customerName { get; set; }
         public string bookingStatus { get; set; }
         public int slotID { get; set; }
@@ -11,6 +11,6 @@
         public int doctorID { get; set; }
         public List<servicesDTO> servicesDTOs { get; set; }
 
-   
+
     }
 }

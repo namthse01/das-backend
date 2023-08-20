@@ -22,7 +22,9 @@ namespace DASBackEnd.Services
                 CustomerName = customerCreateBookingDTO.CustomerName,
                 AccountId = customerCreateBookingDTO.accountId,
                 BookingStatus = customerCreateBookingDTO.bookingStatus,
-                SlotId = customerCreateBookingDTO.slotId
+                SlotId = customerCreateBookingDTO.slotId,
+                Gender = customerCreateBookingDTO.gender,
+                PhoneNo = customerCreateBookingDTO.phoneNum,
             };
             await _bookingRepository.CreateBookingAsync(booking);
 
@@ -50,6 +52,12 @@ namespace DASBackEnd.Services
         {
             List<Booking> list = _bookingRepository.GetAllBookingByManager();
             return list;
+        }
+
+        public Booking updateBookStatusByBookingId(int bookingId, string bookingStatusId)
+        {
+            Booking booking = _bookingRepository.managerUpdateBookingStatus(bookingId, bookingStatusId);
+            return booking;
         }
     }
 }

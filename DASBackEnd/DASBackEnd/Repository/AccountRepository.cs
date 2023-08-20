@@ -14,11 +14,12 @@ namespace DASBackEnd.Repository
         {
             this.dasContext = dasContext;
         }
-        public void createAccount(Account account)
+        public async Task<Account> createAccount(Account account)
         {
-            dasContext.Accounts.Add(account);
-            dasContext.SaveChanges();
-      
+            await dasContext.Accounts.AddAsync(account);
+            await dasContext.SaveChangesAsync();
+
+            return account;
         }
 
         public void updateAccountById(Account account)
@@ -35,7 +36,7 @@ namespace DASBackEnd.Repository
 
         public Account checkAccountExist(loginDTO loginDTO)
         {
-            Account account = dasContext.Accounts.FirstOrDefault(x=> x.Username== loginDTO.Username && x.Password==loginDTO.Password);
+            Account account = dasContext.Accounts.FirstOrDefault(x => x.Username == loginDTO.Username && x.Password == loginDTO.Password);
             return account;
         }
 

@@ -13,10 +13,10 @@ namespace DASBackEnd.Repository
         }
         public async Task<Slot> CreateSlotAsync(Slot slot)
         {
-          
+
             await dbContext.Slots.AddAsync(slot);
             await dbContext.SaveChangesAsync();
-      
+
             return slot;
         }
     }

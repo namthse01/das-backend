@@ -5,7 +5,7 @@ namespace DASBackEnd.IRepository
 {
     public interface IAccountRepository
     {
-        public void createAccount(Account account);
+        public Task<Account> createAccount(Account account);
 
         public void updateAccountById(Account account);
 

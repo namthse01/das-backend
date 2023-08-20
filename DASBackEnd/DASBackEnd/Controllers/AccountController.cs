@@ -65,7 +65,7 @@ namespace DASBackEnd.Controllers
             else
             {
                 Account account = _accountServices.checkAccountExist(loginDTO);
-                if(account!=null)
+                if (account != null)
                 {
                     return Ok(account);
                 }
@@ -146,7 +146,7 @@ namespace DASBackEnd.Controllers
             try
             {
                 AddUpdateAccountDTO addUpdateAccountDTO = _accountServices.updateAccountById(objAccount);
-                
+
                 return Ok(addUpdateAccountDTO);
             }
             catch (Exception)

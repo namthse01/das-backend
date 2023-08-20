@@ -6,10 +6,11 @@ using DASBackEnd.Repository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DASBackEnd.Services
-{    public class SlotServices : ISlotServices
+{
+    public class SlotServices : ISlotServices
     {
         private ISlotRepository _slotRepository;
-      
+
         public SlotServices(ISlotRepository slotRepository)
         {
             this._slotRepository = slotRepository;
@@ -26,8 +27,8 @@ namespace DASBackEnd.Services
         {
             if (doctorToSlotDTO.DayInWeek == "Mon")
             {
-              var  dates = AllDatesInMonth(2023, doctorToSlotDTO.month).Where(i => i.DayOfWeek == DayOfWeek.Monday);
-              foreach (var date in dates)
+                var dates = AllDatesInMonth(2023, doctorToSlotDTO.month).Where(i => i.DayOfWeek == DayOfWeek.Monday);
+                foreach (var date in dates)
                 {
                     for (int slotNo = 1; slotNo <= 4; slotNo++)
                     {

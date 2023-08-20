@@ -9,6 +9,10 @@ public partial class Booking
 
     public string? CustomerName { get; set; }
 
+    public string? PhoneNo { get; set; }
+
+    public string? Gender { get; set; }
+
     public string? BookingStatus { get; set; }
 
     public int? AccountId { get; set; }

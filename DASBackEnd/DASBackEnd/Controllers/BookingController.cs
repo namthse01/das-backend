@@ -72,22 +72,19 @@ namespace DASBackEnd.Controllers
             }
         }
 
-        [HttpPatch]
-        [Route("ManagerUpdateBookingStatus")]
-        public async Task<IActionResult> updateBookingStatus(bookingStatusDTO bookingStatusDTO)
+
+        [HttpPost]
+        [Route("updateBookStatus/bookingId/{id}/{booingStatus}")]
+        public IActionResult managerUpdateOrderWorkingStatus(int id, string bookingStatus)
         {
-            Booking booking = new Booking() { BookingStatus = bookingStatusDTO.bookingStatus };
             try
             {
-                _DasContext.Entry(await _DasContext.Bookings.FirstOrDefaultAsync(x => x.Id == bookingStatusDTO.bookingID));
-                await _DasContext.SaveChangesAsync();
-
-                return Ok(booking);
+                Booking book = iBookingServices.updateBookStatusByBookingId(id, bookingStatus);
+                return Ok(book);
             }
             catch (Exception)
             {
-
-                return BadRequest("Đã xảy ra lỗi khi lấy thông tin, vui lòng thử lại. ");
+                return BadRequest("Can not update order working status, try again. ");
             }
         }
     }
