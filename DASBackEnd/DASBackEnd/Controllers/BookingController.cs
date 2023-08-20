@@ -87,5 +87,24 @@ namespace DASBackEnd.Controllers
                 return BadRequest("Can not update order working status, try again. ");
             }
         }
+
+        [HttpPatch]
+        [Route("ChangeBookingDate")]
+        public IActionResult managerChangeBookingDate(int bookingId, int slotId)
+        {
+            try
+            {
+                Booking book = _DasContext.Bookings.FirstOrDefault(x => x.Id == bookingId);
+                book.SlotId = slotId;
+                _DasContext.Bookings.Update(book);
+                _DasContext.SaveChanges();
+                return Ok(book);
+            }
+            catch (Exception)
+            {
+                return BadRequest("Can not change booking date, try again. ");
+            }
+        }
+
     }
 }

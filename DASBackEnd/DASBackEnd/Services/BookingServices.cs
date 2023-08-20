@@ -54,9 +54,9 @@ namespace DASBackEnd.Services
             return list;
         }
 
-        public Booking updateBookStatusByBookingId(int bookingId, string bookingStatusId)
+        public Booking updateBookStatusByBookingId(int bookingId, string bookingStatus)
         {
-            Booking booking = _bookingRepository.managerUpdateBookingStatus(bookingId, bookingStatusId);
+            Booking booking = _bookingRepository.managerUpdateBookingStatus(bookingId, bookingStatus);
             return booking;
         }
     }
