@@ -37,30 +37,36 @@ namespace DASBackEnd.Controllers
         }
 
         [HttpPost]
-        [Route("Register")]
-        public  IActionResult Register(AddUpdateAccountDTO addUpdateAccountDTO)
+        [Route("RegisterCustomer")]
+        public  IActionResult RegisterCustomer(RegisterCustomerDTO registerCustomerDTO)
         {
             try
             {
-                User user = new User() 
+                if (registerCustomerDTO.RoleId == 3) 
                 {
-                    Gender = addUpdateAccountDTO.Gender,
-                    PhoneNum = addUpdateAccountDTO.PhoneNum
-                };
-                 _DasContext.Users.Add(user);
-                _DasContext.SaveChanges();
-                Account account = new Account()
+                    User user = new User()
+                    {
+                        Gender = registerCustomerDTO.Gender,
+                        PhoneNum = registerCustomerDTO.PhoneNum
+                    };
+                    _DasContext.Users.Add(user);
+                    _DasContext.SaveChanges();
+                    Account account = new Account()
+                    {
+                        UserId = user.Id,
+                        Username = registerCustomerDTO.Username,
+                        Password = registerCustomerDTO.Password,
+                        RoleId = registerCustomerDTO.RoleId,
+                        AccountStatus = "isActive",
+                    };
+                    _DasContext.Accounts.Add(account);
+                    _DasContext.SaveChanges();
+                    return Ok();
+                }
+                else
                 {
-                    UserId = user.Id,
-                    Username = addUpdateAccountDTO.Username,
-                    Password = addUpdateAccountDTO.Password,
-                    RoleId = addUpdateAccountDTO.RoleId,
-                    AccountStatus = "isActive",
-                    WorkingStatus = addUpdateAccountDTO.WorkingStatus,
-                };
-                _DasContext.Accounts.Add(account);
-                _DasContext.SaveChanges();
-                return Ok();
+                    return BadRequest("Role không hợp lệ");
+                }
             }
             catch (Exception)
             {
@@ -77,7 +83,7 @@ namespace DASBackEnd.Controllers
             {
                 User user = new User()
                 {
-                    UserName = addUpdateAccountDTO.UserNamess,
+                    UserName = addUpdateAccountDTO.Username,
                     Gender = addUpdateAccountDTO.Gender,
                     PhoneNum = addUpdateAccountDTO.PhoneNum
                 };
