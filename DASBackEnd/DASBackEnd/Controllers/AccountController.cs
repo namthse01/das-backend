@@ -165,7 +165,7 @@ namespace DASBackEnd.Controllers
 
         [HttpGet]
         [Route("GetAllManager")]
-        public async Task<ActionResult<IEnumerable<Account>>> GetAllMânger()
+        public async Task<ActionResult<IEnumerable<Account>>> GetAllManager()
         {
             if (_DasContext == null)
             {
@@ -180,13 +180,13 @@ namespace DASBackEnd.Controllers
 
         [HttpGet]
         [Route("GetCustomerDetail/{id}")]
-        public async Task<ActionResult<IEnumerable<Account>>> GetCustomerDetail(int id)
+        public IActionResult GetCustomerDetail(int id)
         {
             if (_DasContext.Accounts == null)
             {
                 return BadRequest(new { Message = "Can not get customer information " });
             }
-            var account = await _DasContext.Accounts.FindAsync(id);
+            var account = _DasContext.Accounts.Include(x=>x.User).Where(x=> x.Id == id && x.User.Id ==x.UserId ).FirstOrDefault();
             if (account == null)
             {
                 return BadRequest(new { Message = "Can not get customer information " });

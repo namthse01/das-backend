@@ -2,6 +2,7 @@
 {
     public class AddUpdateServicesDTO
     {
+        public int serviceId { get;set; }
         public string ServiceName { get; set; }
         public string? Intro { get; set; }
 

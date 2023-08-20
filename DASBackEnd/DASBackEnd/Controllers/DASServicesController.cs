@@ -70,12 +70,12 @@ namespace DASBackEnd.Controllers
 
         [HttpPatch]
         [Route("UpdateServices/{id}")]
-        public async Task<IActionResult> UpdateServices(AddUpdateServicesDTO addUpdateServicesDTO)
+        public IActionResult UpdateServices(AddUpdateServicesDTO addUpdateServicesDTO)
         {
             try
             {
-                _daServices.managerUpdateService(addUpdateServicesDTO);
-                return Ok();
+                Daservice service = _daServices.managerUpdateService(addUpdateServicesDTO);
+                return Ok(service);
             }
             catch (Exception)
             {

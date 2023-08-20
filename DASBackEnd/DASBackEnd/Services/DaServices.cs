@@ -28,17 +28,11 @@ namespace DASBackEnd.Services
             return daservice;
         }
 
-        public void managerUpdateService(AddUpdateServicesDTO addUpdateServicesDTO)
+        public Daservice managerUpdateService(AddUpdateServicesDTO addUpdateServicesDTO)
         {
-            Daservice daservice = new Daservice()
-            {
-                ServiceName = addUpdateServicesDTO.ServiceName,
-                Intro = addUpdateServicesDTO.Intro,
-                Outro = addUpdateServicesDTO.Outro,
-                Contents = addUpdateServicesDTO.Contents,
-                AccountId = addUpdateServicesDTO.AccountId,
-            };
-            _servicesRepository.UpdateServiceAsync(daservice);
+            Daservice services = _servicesRepository.UpdateServiceAsync(addUpdateServicesDTO);
+
+            return services;
         }
     }
 }
