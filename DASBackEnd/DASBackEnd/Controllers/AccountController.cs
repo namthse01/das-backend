@@ -38,12 +38,63 @@ namespace DASBackEnd.Controllers
 
         [HttpPost]
         [Route("Register")]
-        public IActionResult Register(AddUpdateAccountDTO addUpdateAccountDTO)
+        public  IActionResult Register(AddUpdateAccountDTO addUpdateAccountDTO)
         {
             try
             {
-                _accountServices.createAccount(addUpdateAccountDTO);
+                User user = new User() 
+                {
+                    UserName = addUpdateAccountDTO.UserNamess,
+                    Gender = addUpdateAccountDTO.Gender,
+                    PhoneNum = addUpdateAccountDTO.PhoneNum
+                };
+                 _DasContext.Users.Add(user);
+                _DasContext.SaveChanges();
+                Account account = new Account()
+                {
+                    UserId = user.Id,
+                    Username = addUpdateAccountDTO.Username,
+                    Password = addUpdateAccountDTO.Password,
+                    RoleId = addUpdateAccountDTO.RoleId,
+                    AccountStatus = "isActive",
+                    WorkingStatus = addUpdateAccountDTO.WorkingStatus,
+                };
+                _DasContext.Accounts.Add(account);
+                _DasContext.SaveChanges();
+                return Ok();
+            }
+            catch (Exception)
+            {
 
+                return BadRequest("Đã xảy ra lỗi trong quá trình tạo tài khoản, vui lòng thử lại. ");
+            }
+        }
+
+        [HttpPost]
+        [Route("RegisterDoctorManager")]
+        public IActionResult RegisterDoctormanager(AddUpdateAccountDTO addUpdateAccountDTO)
+        {
+            try
+            {
+                User user = new User()
+                {
+                    UserName = addUpdateAccountDTO.UserNamess,
+                    Gender = addUpdateAccountDTO.Gender,
+                    PhoneNum = addUpdateAccountDTO.PhoneNum
+                };
+                _DasContext.Users.Add(user);
+                _DasContext.SaveChanges();
+                Account account = new Account()
+                {
+                    UserId = user.Id,
+                    Username = addUpdateAccountDTO.Username,
+                    Password = addUpdateAccountDTO.Password,
+                    RoleId = addUpdateAccountDTO.RoleId,
+                    AccountStatus = "isActive",
+                    WorkingStatus = "working",
+                };
+                _DasContext.Accounts.Add(account);
+                _DasContext.SaveChanges();
                 return Ok();
             }
             catch (Exception)

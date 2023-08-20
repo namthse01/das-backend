@@ -15,29 +15,6 @@ namespace DASBackEnd.Services
             _AccountRepository = accountRepository;
             _UserRepository = userRepository;
         }
-        public async Task<Account> createAccount(AddUpdateAccountDTO addUpdateAccountDTO)
-        {
-            User user = new User()
-            {
-                UserName = addUpdateAccountDTO.UserNamess,
-                Gender = addUpdateAccountDTO.Gender,
-                PhoneNum = addUpdateAccountDTO.PhoneNum,
-            };
-            await _UserRepository.CreateUser(user);
-
-            Account account = new Account()
-            {
-                UserId = addUpdateAccountDTO.UserId,
-                Username = addUpdateAccountDTO.Username,
-                Password = addUpdateAccountDTO.Password,
-                RoleId = addUpdateAccountDTO.RoleId,
-                WorkingStatus = addUpdateAccountDTO.WorkingStatus,
-                AccountStatus = addUpdateAccountDTO.AccountStatus,
-            };
-            await _AccountRepository.createAccount(account);
-
-            return account;
-        }
 
         public AddUpdateAccountDTO updateAccountById(AddUpdateAccountDTO addUpdateAccountDTO)
         {
