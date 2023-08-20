@@ -28,7 +28,7 @@ namespace DASBackEnd.Controllers
 
         [HttpGet]
         [Route("GetBookingDetail")]
-        public IActionResult getBookingDetail(int bookingId)
+        public IActionResult GetBookingDetail(int bookingId)
         {
             try 
             {

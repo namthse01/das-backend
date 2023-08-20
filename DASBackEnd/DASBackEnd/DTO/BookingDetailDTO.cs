@@ -1,4 +1,6 @@
-﻿namespace DASBackEnd.DTO
+﻿using DASBackEnd.Models;
+
+namespace DASBackEnd.DTO
 {
     public class BookingDetailDTO
     {
@@ -9,6 +11,7 @@
         public string? bookingStatus { get; set; }
         public  int? doctorId { get; set; }
         public string doctorName { get; set; }
-        public List<BookingServicesDTO> listServices { get; set;}
+        public List<BookingServicesDTO> listServicesBooking { get; set;}
+
     }
 }
