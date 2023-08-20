@@ -20,11 +20,26 @@ namespace DASBackEnd.Repository
             return bookingDetail;
         }
 
-        public List<BookingDetail> customerGetBookingDetailInformationByBookingId(int bookingId)
+        public Slot customerGetSlotDetailBySlotId(int slotId)
         {
-            List<BookingDetail> bookingDetail = dasContext.BookingDetails.Where(x => x.BookingId == bookingId).ToList();
+            Slot slot = dasContext.Slots.Include(x=>x.Account).Where(x => x.Id == slotId  && x.Account.Id == x.AccountId).FirstOrDefault();
+                
+            return slot;
+        }
 
-            return bookingDetail;
+        public Booking customerGetBookingDetailByBookingId(int bookingId)
+        {
+            Booking book = dasContext.Bookings.Where(x => x.Id == bookingId).FirstOrDefault();
+
+            return book;
+
+        }
+
+        public List<BookingDetail> listOfBookingDetail(int bookingId)
+        {
+            List<BookingDetail> bookDetail = dasContext.BookingDetails.Include(x=>x.Service).Where(x => x.Id == bookingId && x.Service.Id==x.ServiceId).ToList();
+
+            return bookDetail;
 
         }
     }

@@ -19,6 +19,14 @@ namespace DASBackEnd.Repository
             return booking;
         }
 
+        public void changeSlotStatus(int slotId)
+        {
+            Slot booking = dbContext.Slots.FirstOrDefault(x => x.Id == slotId);
+            booking.SlotStatus = "Close";
+            dbContext.Slots.Update(booking);
+            dbContext.SaveChanges();
+        }
+
         public List<Booking> GetAllBookingByCustomer(int id)
         {
             List<Booking> booking = dbContext.Bookings.Where(x => x.AccountId == id).ToList();

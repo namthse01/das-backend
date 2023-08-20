@@ -44,7 +44,6 @@ namespace DASBackEnd.Controllers
             {
                 User user = new User() 
                 {
-                    UserName = addUpdateAccountDTO.UserNamess,
                     Gender = addUpdateAccountDTO.Gender,
                     PhoneNum = addUpdateAccountDTO.PhoneNum
                 };

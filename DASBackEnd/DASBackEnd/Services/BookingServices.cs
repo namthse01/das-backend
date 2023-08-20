@@ -21,7 +21,7 @@ namespace DASBackEnd.Services
             {
                 CustomerName = customerCreateBookingDTO.CustomerName,
                 AccountId = customerCreateBookingDTO.accountId,
-                BookingStatus = customerCreateBookingDTO.bookingStatus,
+                BookingStatus = "OnProcess",
                 SlotId = customerCreateBookingDTO.slotId,
                 Gender = customerCreateBookingDTO.gender,
                 PhoneNo = customerCreateBookingDTO.phoneNum,
@@ -37,6 +37,9 @@ namespace DASBackEnd.Services
                 };
                 _bookingDetailRepository.CreateBookingDetailAsync(bookingDetail);
             }
+
+            _bookingRepository.changeSlotStatus((int)booking.SlotId);
+
             return booking;
         }
 

@@ -5,6 +5,8 @@ namespace DASBackEnd.IRepository
     public interface IBookingDetailRepository
     {
         public BookingDetail CreateBookingDetailAsync(BookingDetail bookingDetail);
-        public List<BookingDetail> customerGetBookingDetailInformationByBookingId(int bookingId);
+        public Slot customerGetSlotDetailBySlotId(int slotId);
+        public Booking customerGetBookingDetailByBookingId(int bookingId);
+        public List<BookingDetail> listOfBookingDetail(int bookingId);
     }
 }

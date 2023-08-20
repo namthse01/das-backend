@@ -6,6 +6,7 @@ using DASBackEnd.Repository;
 using DASBackEnd.Services;
 using Microsoft.EntityFrameworkCore;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -34,6 +35,9 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 builder.Services.AddScoped<IBookingDetailServices, BookingDetailServices>();
 builder.Services.AddScoped<IBookingDetailRepository, BookingDetailRepository>();
+
+builder.Services.AddControllers().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
 
 var app = builder.Build();
 

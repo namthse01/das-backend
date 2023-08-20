@@ -1,8 +1,10 @@
 ﻿namespace DASBackEnd.DTO
 {
-    public class servicesDTO
+    public class BookingServicesDTO
     {
+        public int bookingId { get; set; }
         public int serviceId { get; set; }
+
         public string serviceName { get; set; }
     }
 }

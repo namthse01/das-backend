@@ -262,3 +262,6 @@ D:\Source 2\Lịch nha khoa\back-end\DASBackEnd\DASBackEnd\obj\Debug\net6.0\scop
 D:\Source 2\Lịch nha khoa\back-end\DASBackEnd\DASBackEnd\obj\Debug\net6.0\DASBackEnd.csproj.CopyComplete
 D:\Source 2\Lịch nha khoa\back-end\DASBackEnd\DASBackEnd\obj\Debug\net6.0\DASBackEnd.genruntimeconfig.cache
 D:\Source 2\Lịch nha khoa\back-end\DASBackEnd\DASBackEnd\obj\Debug\net6.0\ref\DASBackEnd.dll
+D:\Source 2\Lịch nha khoa\back-end\DASBackEnd\DASBackEnd\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\Source 2\Lịch nha khoa\back-end\DASBackEnd\DASBackEnd\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\Source 2\Lịch nha khoa\back-end\DASBackEnd\DASBackEnd\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

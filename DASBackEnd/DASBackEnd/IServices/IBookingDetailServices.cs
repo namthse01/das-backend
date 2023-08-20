@@ -1,9 +1,10 @@
-﻿using DASBackEnd.Models;
+﻿using DASBackEnd.DTO;
+using DASBackEnd.Models;
 
 namespace DASBackEnd.IServices
 {
     public interface IBookingDetailServices
     {
-        public List<BookingDetail> customerGetBookingDetailInformationByBookingId(int bookingId);
+        public BookingDetailDTO customerGetBookingDetailById(int bookingId);
     }
 }
