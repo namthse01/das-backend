@@ -16,7 +16,7 @@ namespace DASBackEnd.Services
         public BookingDetailDTO customerGetBookingDetailById(int bookingId)
         {
             Booking book = repository.customerGetBookingDetailByBookingId(bookingId);
-            Slot slot = repository.customerGetSlotDetailBySlotId(2);
+            Slot slot = repository.customerGetSlotDetailBySlotId((int)book.SlotId);
             List<BookingDetail> bookDetail = repository.listOfBookingDetail(bookingId);
             List<BookingServicesDTO> servciesDTO = new List<BookingServicesDTO>();
 

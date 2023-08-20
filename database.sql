@@ -129,13 +129,13 @@ VALUES('Hygeine & Periodontal Health',
 3000000,3500000,5000000,1)
 
 INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
-VALUES(1,'Open',21/8/2023,'Mon',5)
+VALUES(1,'Open','20230821 10:34:09 AM','Mon',5)
 
 INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
-VALUES(2,'Open',21/8/2023,'Mon',5)
+VALUES(2,'Open','20230828 10:34:09 AM''Mon',5)
 
 INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
-VALUES(3,'Open',21/8/2023,'Mon',5)
+VALUES(3,'Open','20230814 10:34:09 AM','Mon',5)
 
 INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
-VALUES(4,'Open',21/8/2023,'Mon',5)
+VALUES(4,'Open','20230807 10:34:09 AM','Mon',5)
