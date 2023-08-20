@@ -22,8 +22,8 @@ namespace DASBackEnd.Repository
 
         public void UpdateServiceAsync(Daservice service)
         {
-            dbContext.Daservices.Update(service);
-            dbContext.SaveChangesAsync();
+             dbContext.Daservices.Update(service);
+            dbContext.SaveChanges();
         }
     }
 }

@@ -57,19 +57,20 @@ namespace DASBackEnd.Controllers
 
 
         [HttpGet]
-        [Route("GetAllBookingByManager")]
-        public async Task<ActionResult<IEnumerable<Booking>>> GetAllBookingByManager()
+        [Route("getListBookingBymanager")]
+        public IActionResult getListOrderByCustomerId()
         {
-            if (_DasContext == null)
+            try
             {
-                return BadRequest(new { Message = "Can not get all booking information " });
+                List<Booking> list = iBookingServices.managerGetAllBooking();
+                return Ok(list);
             }
-            var bookings = await _DasContext.Daservices.ToListAsync();
-            if (bookings == null)
+            catch (Exception)
             {
-                return BadRequest(new { Message = "Can not get all booking for manager " });
+
+                return BadRequest("Đã xảy ra lỗi khi lấy thông tin, vui lòng thử lại. ");
             }
-            return Ok(bookings);
         }
+
     }
 }

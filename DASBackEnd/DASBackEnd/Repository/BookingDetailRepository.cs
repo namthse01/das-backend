@@ -20,9 +20,9 @@ namespace DASBackEnd.Repository
             return bookingDetail;
         }
 
-        public BookingDetail customerGetBookingDetailInformationByBookingId(int bookingId)
+        public List<BookingDetail> customerGetBookingDetailInformationByBookingId(int bookingId)
         {
-            BookingDetail bookingDetail = dasContext.BookingDetails.Find(bookingId);
+            List<BookingDetail> bookingDetail = dasContext.BookingDetails.Where(x => x.BookingId == bookingId).ToList();
 
             return bookingDetail;
 

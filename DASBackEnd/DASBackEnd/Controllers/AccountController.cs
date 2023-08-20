@@ -1,5 +1,6 @@
 ﻿using DASBackEnd.Data;
 using DASBackEnd.DTO;
+using DASBackEnd.IServices;
 using DASBackEnd.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,13 +12,13 @@ namespace DASBackEnd.Controllers
     [ApiController]
     public class AccountController : ControllerBase
     {
-
+        private IAccountServices _accountServices;
         private readonly DasContext _DasContext;
-        public AccountController(DasContext DasContext)
+        public AccountController(DasContext DasContext, IAccountServices accountServices)
         {
 
             this._DasContext = DasContext;
-
+            this._accountServices = accountServices;
         }
 
         [HttpGet]
@@ -33,6 +34,23 @@ namespace DASBackEnd.Controllers
                 return await _DasContext.Accounts.ToListAsync();
             }
 
+        }
+
+        [HttpPost]
+        [Route("Register")]
+        public IActionResult Register(AddUpdateAccountDTO addUpdateAccountDTO)
+        {
+            try
+            {
+                _accountServices.createAccount(addUpdateAccountDTO);
+
+                return Ok();
+            }
+            catch (Exception)
+            {
+
+                return BadRequest("Đã xảy ra lỗi trong quá trình tạo tài khoản, vui lòng thử lại. ");
+            }
         }
 
 
@@ -115,11 +133,19 @@ namespace DASBackEnd.Controllers
 
         [HttpPatch]
         [Route("UpdateProfile/{id}")]
-        public async Task<Account> UpdateProfile(Account objAccount)
+        public IActionResult UpdateProfile(AddUpdateAccountDTO objAccount)
         {
-            _DasContext.Entry(objAccount).State = EntityState.Modified;
-            await _DasContext.SaveChangesAsync();
-            return objAccount;
+            try
+            {
+                AddUpdateAccountDTO addUpdateAccountDTO = _accountServices.updateAccountById(objAccount);
+                
+                return Ok(addUpdateAccountDTO);
+            }
+            catch (Exception)
+            {
+
+                return BadRequest("Đã xảy ra lỗi trong quá trình update tài khoản, vui lòng thử lại. ");
+            }
         }
     }
 }

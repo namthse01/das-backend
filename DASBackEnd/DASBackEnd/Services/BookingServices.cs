@@ -42,13 +42,13 @@ namespace DASBackEnd.Services
         {
             List<Booking> list = _bookingRepository.GetAllBookingByCustomer(customerId);
 
+
             return list;
         }
 
         public List<Booking> managerGetAllBooking()
         {
             List<Booking> list = _bookingRepository.GetAllBookingByManager();
-
             return list;
         }
     }
