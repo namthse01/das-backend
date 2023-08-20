@@ -8,5 +8,6 @@ namespace DASBackEnd.IServices
         public Task<Account> createAccount(AddUpdateAccountDTO account);
 
         public AddUpdateAccountDTO updateAccountById(AddUpdateAccountDTO addUpdateAccountDTO);
+        public Account checkAccountExist(loginDTO loginDTO);
     }
 }

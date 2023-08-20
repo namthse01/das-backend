@@ -1,4 +1,5 @@
 ﻿using DASBackEnd.Data;
+using DASBackEnd.DTO;
 using DASBackEnd.IRepository;
 using DASBackEnd.Models;
 using Microsoft.EntityFrameworkCore;
@@ -29,6 +30,12 @@ namespace DASBackEnd.Repository
         public Account findAccountById(int id)
         {
             Account account = dasContext.Accounts.FirstOrDefault(x => x.Id == id);
+            return account;
+        }
+
+        public Account checkAccountExist(loginDTO loginDTO)
+        {
+            Account account = dasContext.Accounts.FirstOrDefault(x=> x.Username== loginDTO.Username && x.Password==loginDTO.Password);
             return account;
         }
 

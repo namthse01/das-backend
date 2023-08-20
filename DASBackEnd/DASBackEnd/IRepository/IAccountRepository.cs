@@ -1,4 +1,5 @@
-﻿using DASBackEnd.Models;
+﻿using DASBackEnd.DTO;
+using DASBackEnd.Models;
 
 namespace DASBackEnd.IRepository
 {
@@ -9,5 +10,7 @@ namespace DASBackEnd.IRepository
         public void updateAccountById(Account account);
 
         public Account findAccountById(int id);
+
+        public Account checkAccountExist(loginDTO loginDTO);
     }
 }

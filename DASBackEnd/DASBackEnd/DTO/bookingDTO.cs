@@ -9,6 +9,8 @@
         public int slotNo { get; set; }
         public string doctorName { get; set; }
         public int doctorID { get; set; }
-        public List<listServicesDTO> servicesDTOs { get; set; }
+        public List<servicesDTO> servicesDTOs { get; set; }
+
+   
     }
 }

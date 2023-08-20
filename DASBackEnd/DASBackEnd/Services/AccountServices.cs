@@ -47,5 +47,11 @@ namespace DASBackEnd.Services
             _AccountRepository.updateAccountById(account);
             return addUpdateAccountDTO;
         }
+
+        public Account checkAccountExist(loginDTO loginDTO)
+        {
+            Account account =_AccountRepository.checkAccountExist(loginDTO);
+            return account;
+        }
     }
 }

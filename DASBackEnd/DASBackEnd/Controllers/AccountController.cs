@@ -56,7 +56,7 @@ namespace DASBackEnd.Controllers
 
         [HttpPost]
         [Route("Login")]
-        public async Task<ActionResult<IEnumerable<Account>>> Login(loginDTO loginDTO)
+        public ActionResult<IEnumerable<Account>> Login(loginDTO loginDTO)
         {
             if (_DasContext == null)
             {
@@ -64,7 +64,15 @@ namespace DASBackEnd.Controllers
             }
             else
             {
-                return await _DasContext.Accounts.Where(x => x.Username == loginDTO.Username && x.Password == loginDTO.Password).ToListAsync();
+                Account account = _accountServices.checkAccountExist(loginDTO);
+                if(account!=null)
+                {
+                    return Ok(account);
+                }
+                else
+                {
+                    return BadRequest(new { Message = "Account not exist" });
+                }
             }
 
         }

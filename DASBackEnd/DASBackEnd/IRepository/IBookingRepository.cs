@@ -8,5 +8,6 @@ namespace DASBackEnd.IRepository
 
         public List<Booking> GetAllBookingByCustomer(int id);
         public List<Booking> GetAllBookingByManager();
+
     }
 }
