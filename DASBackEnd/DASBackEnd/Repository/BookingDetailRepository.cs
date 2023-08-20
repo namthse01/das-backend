@@ -37,7 +37,7 @@ namespace DASBackEnd.Repository
 
         public List<BookingDetail> listOfBookingDetail(int bookingId)
         {
-            List<BookingDetail> bookDetail = dasContext.BookingDetails.Include(x=>x.Service).Where(x => x.Id == bookingId && x.Service.Id==x.ServiceId).ToList();
+            List<BookingDetail> bookDetail = dasContext.BookingDetails.Include(x=>x.Service).Where(x => x.Id == bookingId).ToList();
 
             return bookDetail;
 

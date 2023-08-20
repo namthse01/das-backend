@@ -29,13 +29,13 @@ namespace DASBackEnd.Repository
 
         public List<Booking> GetAllBookingByCustomer(int id)
         {
-            List<Booking> booking = dbContext.Bookings.Where(x => x.AccountId == id).ToList();
+            List<Booking> booking = dbContext.Bookings.Include(x=>x.Slot).Where(x => x.AccountId == id).ToList();
             return booking;
         }
 
         public List<Booking> GetAllBookingByManager()
         {
-            List<Booking> booking = dbContext.Bookings.ToList();
+            List<Booking> booking = dbContext.Bookings.Include(x=> x.Slot).ToList();
             return booking;
         }
 

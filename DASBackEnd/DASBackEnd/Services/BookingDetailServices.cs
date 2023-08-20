@@ -18,7 +18,7 @@ namespace DASBackEnd.Services
             Booking book = repository.customerGetBookingDetailByBookingId(bookingId);
             Slot slot = repository.customerGetSlotDetailBySlotId((int)book.SlotId);
             List<BookingDetail> bookDetail = repository.listOfBookingDetail(bookingId);
-            List<BookingServicesDTO> servciesDTO = new List<BookingServicesDTO>();
+         /*   List<BookingServicesDTO> servciesDTO = new List<BookingServicesDTO>();
 
 
             foreach (var item in bookDetail)
@@ -29,7 +29,7 @@ namespace DASBackEnd.Services
                     serviceId = (int)item.ServiceId,
                     serviceName = item.Service.ServiceName
                 });
-            }
+            }*/
             BookingDetailDTO bookingDetailDTO = new BookingDetailDTO()
             {
                 Id = book.Id,
@@ -39,8 +39,9 @@ namespace DASBackEnd.Services
                 Gender = book.Gender,
                 doctorId = slot.AccountId,
                 doctorName = slot.Account.Username,
-                listServices = servciesDTO
             };
+            bookingDetailDTO.listServices.AddRange((IEnumerable<BookingServicesDTO>)bookDetail);
+
             return bookingDetailDTO;
         }
     }
