@@ -32,7 +32,6 @@ namespace DASBackEnd.Repository
             Booking book = dasContext.Bookings.Where(x => x.Id == bookingId).FirstOrDefault();
 
             return book;
-
         }
 
         public List<BookingDetail> listOfBookingDetail(int bookingId)

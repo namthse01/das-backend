@@ -1,6 +1,7 @@
 ﻿using DASBackEnd.Data;
 using DASBackEnd.IRepository;
 using DASBackEnd.Models;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
 
 namespace DASBackEnd.Repository

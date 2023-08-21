@@ -73,8 +73,8 @@ namespace DASBackEnd.Controllers
         }
 
 
-        [HttpPost]
-        [Route("updateBookStatus/bookingId/{id}/{booingStatus}")]
+        [HttpPatch]
+        [Route("ManagerUpdateBookStatus/bookingId/{id}")]
         public IActionResult managerUpdateOrderWorkingStatus(int id, string bookingStatus)
         {
             try

@@ -3,6 +3,8 @@ using DASBackEnd.IRepository;
 using DASBackEnd.IServices;
 using DASBackEnd.Models;
 using DASBackEnd.Repository;
+using Microsoft.Identity.Client;
+using System.Reflection;
 
 namespace DASBackEnd.Services
 {
@@ -17,28 +19,28 @@ namespace DASBackEnd.Services
         }
         public async Task<Booking> customerCreateBooking(CustomerCreateBookingDTO customerCreateBookingDTO)
         {
-            Booking booking = new Booking()
-            {
-                CustomerName = customerCreateBookingDTO.CustomerName,
-                AccountId = customerCreateBookingDTO.accountId,
-                BookingStatus = "OnProcess",
-                SlotId = customerCreateBookingDTO.slotId,
-                Gender = customerCreateBookingDTO.gender,
-                PhoneNo = customerCreateBookingDTO.phoneNum,
-            };
-            await _bookingRepository.CreateBookingAsync(booking);
 
-            foreach (var item in customerCreateBookingDTO.listservicesBookDTO)
-            {
-                BookingDetail bookingDetail = new BookingDetail()
+            Booking booking = new Booking();
+
+                booking.CustomerName = customerCreateBookingDTO.CustomerName;
+                booking.AccountId = customerCreateBookingDTO.accountId;
+                booking.BookingStatus = "OnProcess";
+                booking.SlotId = customerCreateBookingDTO.slotId;
+                booking.Gender = customerCreateBookingDTO.gender;
+                booking.PhoneNo = customerCreateBookingDTO.phoneNum;
+                await _bookingRepository.CreateBookingAsync(booking);
+
+                foreach (var item in customerCreateBookingDTO.listservicesBookDTO)
                 {
-                    BookingId = booking.Id,
-                    ServiceId = item.serviceId
-                };
-                _bookingDetailRepository.CreateBookingDetailAsync(bookingDetail);
-            }
+                    BookingDetail bookingDetail = new BookingDetail()
+                    {
+                        BookingId = booking.Id,
+                        ServiceId = item.serviceId
+                    };
+                    _bookingDetailRepository.CreateBookingDetailAsync(bookingDetail);
+                }
 
-            _bookingRepository.changeSlotStatus((int)booking.SlotId);
+                _bookingRepository.changeSlotStatus((int)booking.SlotId);
 
             return booking;
         }
