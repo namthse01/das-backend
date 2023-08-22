@@ -196,12 +196,12 @@ namespace DASBackEnd.Controllers
         }
 
         [HttpPatch]
-        [Route("UpdateProfile/{id}")]
+        [Route("UpdateDoctorWorkingStatusById/{id}")]
         public IActionResult UpdateProfile(AddUpdateAccountDTO objAccount)
         {
             try
             {
-                AddUpdateAccountDTO addUpdateAccountDTO = _accountServices.updateAccountById(objAccount);
+                AddUpdateAccountDTO addUpdateAccountDTO = _accountServices.updateDoctorWorkingStatusById(objAccount);
 
                 return Ok(addUpdateAccountDTO);
             }
