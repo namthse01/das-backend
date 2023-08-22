@@ -22,7 +22,7 @@ namespace DASBackEnd.Controllers
         }
 
         [HttpGet]
-        [Route("GetAllSlotByDoctorId/{id}")]
+        [Route("GetAllSlotByDoctorId")]
         public IActionResult GetAllSlotByDoctorId(int id)
         {
             if (_DasContext.Slots == null)
