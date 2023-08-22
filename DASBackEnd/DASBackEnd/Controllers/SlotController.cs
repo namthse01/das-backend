@@ -1,5 +1,6 @@
 ﻿using DASBackEnd.Data;
 using DASBackEnd.DTO;
+using DASBackEnd.IRepository;
 using DASBackEnd.IServices;
 using DASBackEnd.Models;
 using Microsoft.AspNetCore.Http;
@@ -14,11 +15,13 @@ namespace DASBackEnd.Controllers
     {
         private ISlotServices _IslotServices;
         private readonly DasContext _DasContext;
-        public SlotController(DasContext DasContext, ISlotServices slotServices)
+        private ISlotRepository _SlotRepository;
+        public SlotController(DasContext DasContext, ISlotServices slotServices, ISlotRepository SlotRepository)
         {
 
             this._DasContext = DasContext;
             _IslotServices = slotServices;
+            _SlotRepository = SlotRepository;
         }
 
         [HttpGet]
@@ -54,13 +57,44 @@ namespace DASBackEnd.Controllers
         }
 
 
+        public static IEnumerable<DateTime> AllDatesInMonth(int year, int month)
+        {
+            int days = DateTime.DaysInMonth(year, month);
+            for (int day = 1; day <= days; day++)
+            {
+                yield return new DateTime(year, month, day);
+            }
+        }
+
         [HttpPost]
         [Route("AddDoctorToSlot")]
         public async Task<IActionResult> adddoctorToSlot(DoctorToSlotDTO doctorToSlotDTO)
         {
             try
             {
-                await _IslotServices.CreateSlotAsync(doctorToSlotDTO);
+         /*       List<Slot> slot = _SlotRepository.GetAllSlot();
+                var dates = AllDatesInMonth(2023, doctorToSlotDTO.month).Where(i => i.DayOfWeek == DayOfWeek.Monday);*/
+                if (doctorToSlotDTO.roleId == 4) {
+                    await _IslotServices.CreateSlotAsync(doctorToSlotDTO);
+               /*     foreach (Slot slotItem in slot)
+                    {
+                        foreach (DateTime date in dates)
+                        {
+                            if (slotItem.Date == date)
+                            {
+                                break;
+                            }
+                            else
+                            {
+
+                            }
+                        }
+                    }*/
+                }
+                else
+                {
+                    return BadRequest("Must be doctor to slot please try again. ");
+                } 
                 return Ok();
             }
             catch (Exception)

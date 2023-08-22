@@ -9,5 +9,7 @@
 
         public int AccountId { get; set; }
 
+        public int roleId { get; set; }
+
     }
 }

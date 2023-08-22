@@ -1,6 +1,7 @@
 ﻿using DASBackEnd.Data;
 using DASBackEnd.IRepository;
 using DASBackEnd.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace DASBackEnd.Repository
 {
@@ -18,6 +19,19 @@ namespace DASBackEnd.Repository
             await dbContext.SaveChangesAsync();
 
             return slot;
+        }
+
+        public Account getDoctorbyId(int id)
+        {
+            Account account= dbContext.Accounts.Where(x=> x.Id==id).FirstOrDefault();
+
+            return account;
+        }
+
+        public List<Slot> GetAllSlot()
+        {
+            List<Slot> slots = dbContext.Slots.ToList();
+            return slots;
         }
     }
 }
