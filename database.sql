@@ -114,7 +114,7 @@ VALUES ('Implants',
 'Rediscover the joy of a complete smile with Implants Dental Clinic. Our commitment to innovation and patient satisfaction means that you will receive a customized treatment plan designed to address your unique needs. Say goodbye to the challenges of missing teeth and embrace a newfound sense of confidence and functionality. Schedule your consultation today to explore how our Implants service can transform your smile, enhance your quality of life, and stand the test of time.',
 3000000,4000000,8000000,1,0)
 
-INSERT INTO DAServices(ServiceName,Intro,Contents,Outro,lowPrice,advancedPrice,topPrice,accountId.,ServiceIsActive)
+INSERT INTO DAServices(ServiceName,Intro,Contents,Outro,lowPrice,advancedPrice,topPrice,accountId,ServiceIsActive)
 VALUES ('Exams',
 'Embark on a journey towards optimal oral health with our comprehensive Exams dental service. Your smile is our priority, and our dedicated team is here to provide you with thorough and personalized examinations that lay the foundation for a lifetime of healthy teeth and gums.',
 'Our Exams dental service is designed to assess the health of your teeth, gums, and overall oral cavity. During your examination, our experienced dentists will carefully evaluate each tooth''s condition, screen for cavities, check the health of your gums, and perform a comprehensive oral cancer screening. We utilize advanced diagnostic tools to ensure a detailed understanding of your oral health, allowing us to tailor treatment recommendations to your specific needs. Regular dental exams are essential for detecting potential issues early and preventing more extensive problems down the line.',
