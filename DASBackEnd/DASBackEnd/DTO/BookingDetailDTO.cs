@@ -11,6 +11,7 @@ namespace DASBackEnd.DTO
         public string? bookingStatus { get; set; }
         public  int? doctorId { get; set; }
         public string doctorName { get; set; }
+        public int slotId { get; set; }
         public List<BookingServicesDTO> listServicesBooking { get; set;}
 
     }

@@ -40,6 +40,7 @@ namespace DASBackEnd.Services
                 bookingStatus = book.BookingStatus,
                 Gender = book.Gender,
                 doctorId = slot.AccountId,
+                slotId = slot.Id,
                 doctorName = slot.Account.Username,
                 listServicesBooking = servciesDTO
             };
