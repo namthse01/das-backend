@@ -23,13 +23,13 @@ namespace DASBackEnd.Controllers
 
         [HttpGet]
         [Route("GetAllSlotByDoctorId/{id}")]
-        public async Task<ActionResult<IEnumerable<List<Slot>>>> GetAllSlotByDoctorId(int id)
+        public IActionResult GetAllSlotByDoctorId(int id)
         {
             if (_DasContext.Slots == null)
             {
                 return BadRequest(new { Message = "Can not get slots of doctor " });
             }
-            List<Slot> slots = await _DasContext.Slots.Where(x => x.AccountId == id).ToListAsync();
+            List<Slot> slots =  _DasContext.Slots.Where(x => x.AccountId == id).ToList();
             if (slots == null)
             {
                 return BadRequest(new { Message = "Doctor not exist " });
