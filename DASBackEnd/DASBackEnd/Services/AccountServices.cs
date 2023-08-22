@@ -16,13 +16,13 @@ namespace DASBackEnd.Services
             _UserRepository = userRepository;
         }
 
-        public AddUpdateAccountDTO updateAccountById(AddUpdateAccountDTO addUpdateAccountDTO)
+        public AddUpdateAccountDTO updateDoctorWorkingStatusById(AddUpdateAccountDTO addUpdateAccountDTO)
         {
             Account account = _AccountRepository.findAccountById(addUpdateAccountDTO.accountId);
-            account.Username = addUpdateAccountDTO.Username;
-            account.Password = addUpdateAccountDTO.Password;
+/*            account.Username = addUpdateAccountDTO.Username;
+            account.Password = addUpdateAccountDTO.Password;*/
             account.WorkingStatus = addUpdateAccountDTO.WorkingStatus;
-            account.AccountStatus = addUpdateAccountDTO.AccountStatus;
+     /*       account.AccountStatus = addUpdateAccountDTO.AccountStatus;*/
             _AccountRepository.updateAccountById(account);
             return addUpdateAccountDTO;
         }
