@@ -6,6 +6,8 @@
         public string ServiceName { get; set; }
         public string? Intro { get; set; }
 
+        public int? ServiceIsActive { get; set; }
+
         public string? Contents { get; set; }
 
         public string? Outro { get; set; }

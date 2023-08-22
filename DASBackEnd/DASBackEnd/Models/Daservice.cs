@@ -25,6 +25,8 @@ public partial class Daservice
 
     public int? AccountId { get; set; }
 
+    public int? ServiceIsActive { get; set; }
+
     public virtual Account? Account { get; set; }
 
     public virtual ICollection<BookingDetail> BookingDetails { get; } = new List<BookingDetail>();
