@@ -23,6 +23,7 @@ namespace DASBackEnd.Services
                 Outro = addUpdateServicesDTO.Outro,
                 Contents = addUpdateServicesDTO.Contents,
                 AccountId = addUpdateServicesDTO.AccountId,
+                ServiceIsActive = 0,
             };
             await _servicesRepository.CreateServiceAsync(daservice);
             return daservice;
