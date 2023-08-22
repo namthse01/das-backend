@@ -21,13 +21,16 @@ namespace DASBackEnd.Services
         {
 
             Booking booking = new Booking();
-
+        
                 booking.CustomerName = customerCreateBookingDTO.CustomerName;
                 booking.AccountId = customerCreateBookingDTO.accountId;
                 booking.BookingStatus = "OnProcess";
                 booking.SlotId = customerCreateBookingDTO.slotId;
                 booking.Gender = customerCreateBookingDTO.gender;
                 booking.PhoneNo = customerCreateBookingDTO.phoneNum;
+
+            if (booking.CustomerName != null && booking.PhoneNo != null && booking.AccountId != null) 
+            {
                 await _bookingRepository.CreateBookingAsync(booking);
 
                 foreach (var item in customerCreateBookingDTO.listservicesBookDTO)
@@ -41,6 +44,7 @@ namespace DASBackEnd.Services
                 }
 
                 _bookingRepository.changeSlotStatus((int)booking.SlotId);
+            }
 
             return booking;
         }
