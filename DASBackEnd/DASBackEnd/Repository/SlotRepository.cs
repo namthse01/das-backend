@@ -23,7 +23,7 @@ namespace DASBackEnd.Repository
 
         public Account getDoctorbyId(int id)
         {
-            Account account= dbContext.Accounts.Where(x=> x.Id==id).FirstOrDefault();
+            Account account= dbContext.Accounts.Include(x=>x.User).Where(x=> x.Id==id && x.UserId==x.User.Id).FirstOrDefault();
 
             return account;
         }

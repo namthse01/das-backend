@@ -3,7 +3,7 @@
     public class DoctorToSlotDTO
     {
 
-        public string doctorName { get; set; }
+       /* public string doctorName { get; set; }*/
         public int month { get; set; }
 
         public string DayInWeek { get; set; }

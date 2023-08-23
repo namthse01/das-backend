@@ -25,6 +25,7 @@ namespace DASBackEnd.Services
         }
         public async Task CreateSlotAsync(DoctorToSlotDTO doctorToSlotDTO)
         {
+            Account doctor = _slotRepository.getDoctorbyId(doctorToSlotDTO.AccountId);
             if (doctorToSlotDTO.DayInWeek == "Mon")
             {
                 var dates = AllDatesInMonth(2023, doctorToSlotDTO.month).Where(i => i.DayOfWeek == DayOfWeek.Monday);
@@ -39,7 +40,7 @@ namespace DASBackEnd.Services
                             AccountId = doctorToSlotDTO.AccountId,
                             Date = date,
                             SlotStatus = "Open",
-                            DoctorName = doctorToSlotDTO.doctorName
+                            DoctorName = doctor.User.UserName
                         };
                         await _slotRepository.CreateSlotAsync(slot);
                     }
@@ -59,7 +60,7 @@ namespace DASBackEnd.Services
                             AccountId = doctorToSlotDTO.AccountId,
                             Date = date,
                             SlotStatus = "Open",
-                            DoctorName = doctorToSlotDTO.doctorName
+                            DoctorName = doctor.User.UserName
                         };
                         await _slotRepository.CreateSlotAsync(slot);
                     }
@@ -79,7 +80,7 @@ namespace DASBackEnd.Services
                             AccountId = doctorToSlotDTO.AccountId,
                             Date = date,
                             SlotStatus = "Open",
-                            DoctorName = doctorToSlotDTO.doctorName
+                            DoctorName = doctor.User.UserName
                         };
                         await _slotRepository.CreateSlotAsync(slot);
                     }
@@ -99,7 +100,7 @@ namespace DASBackEnd.Services
                             AccountId = doctorToSlotDTO.AccountId,
                             Date = date,
                             SlotStatus = "Open",
-                            DoctorName = doctorToSlotDTO.doctorName
+                            DoctorName = doctor.User.UserName
                         };
                         await _slotRepository.CreateSlotAsync(slot);
                     }
@@ -119,7 +120,7 @@ namespace DASBackEnd.Services
                             AccountId = doctorToSlotDTO.AccountId,  
                             Date = date,
                             SlotStatus = "Open",
-                            DoctorName = doctorToSlotDTO.doctorName
+                            DoctorName = doctor.User.UserName
                         };
                         await _slotRepository.CreateSlotAsync(slot);
                     }
