@@ -99,7 +99,7 @@ namespace DASBackEnd.Services
                             AccountId = doctorToSlotDTO.AccountId,
                             Date = date,
                             SlotStatus = "Open",
-                            DoctorName = doctorToSlotDTO.doctocName
+                            DoctorName = doctorToSlotDTO.doctorName
                         };
                         await _slotRepository.CreateSlotAsync(slot);
                     }
