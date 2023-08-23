@@ -15,11 +15,11 @@ public partial class Daservice
 
     public string? Outro { get; set; }
 
-    public decimal? LowPrice { get; set; }
+    public int? LowPrice { get; set; }
 
-    public decimal? AdvancedPrice { get; set; }
+    public int? AdvancedPrice { get; set; }
 
-    public decimal? TopPrice { get; set; }
+    public int? TopPrice { get; set; }
 
     public string? ImgUrl { get; set; }
 

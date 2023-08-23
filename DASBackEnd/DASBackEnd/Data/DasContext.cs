@@ -37,11 +37,11 @@ public partial class DasContext : DbContext
     {
         modelBuilder.Entity<Account>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Account__3214EC27523A294E");
+            entity.HasKey(e => e.Id).HasName("PK__Account__3214EC272811EA91");
 
             entity.ToTable("Account");
 
-            entity.HasIndex(e => e.Username, "UQ__Account__536C85E41673FBBB").IsUnique();
+            entity.HasIndex(e => e.Username, "UQ__Account__536C85E4872162E9").IsUnique();
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.AccountStatus)
@@ -70,7 +70,7 @@ public partial class DasContext : DbContext
 
         modelBuilder.Entity<Booking>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Booking__3214EC27A5A8AF2D");
+            entity.HasKey(e => e.Id).HasName("PK__Booking__3214EC27A37E82B2");
 
             entity.ToTable("Booking");
 
@@ -86,6 +86,7 @@ public partial class DasContext : DbContext
                 .HasMaxLength(100)
                 .HasColumnName("phoneNo");
             entity.Property(e => e.SlotId).HasColumnName("slotId");
+            entity.Property(e => e.TotalPrice).HasColumnName("totalPrice");
 
             entity.HasOne(d => d.Account).WithMany(p => p.Bookings)
                 .HasForeignKey(d => d.AccountId)
@@ -98,7 +99,7 @@ public partial class DasContext : DbContext
 
         modelBuilder.Entity<BookingDetail>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__BookingD__3214EC275C6540E8");
+            entity.HasKey(e => e.Id).HasName("PK__BookingD__3214EC2719C3073C");
 
             entity.ToTable("BookingDetail");
 
@@ -117,29 +118,23 @@ public partial class DasContext : DbContext
 
         modelBuilder.Entity<Daservice>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__DAServic__3214EC274AB2571E");
+            entity.HasKey(e => e.Id).HasName("PK__DAServic__3214EC276E8608B0");
 
             entity.ToTable("DAServices");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.AccountId).HasColumnName("accountId");
-            entity.Property(e => e.AdvancedPrice)
-                .HasColumnType("decimal(18, 2)")
-                .HasColumnName("advancedPrice");
+            entity.Property(e => e.AdvancedPrice).HasColumnName("advancedPrice");
             entity.Property(e => e.Contents).HasMaxLength(1000);
             entity.Property(e => e.ImgUrl)
                 .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasColumnName("imgUrl");
             entity.Property(e => e.Intro).HasMaxLength(1000);
-            entity.Property(e => e.LowPrice)
-                .HasColumnType("decimal(18, 2)")
-                .HasColumnName("lowPrice");
+            entity.Property(e => e.LowPrice).HasColumnName("lowPrice");
             entity.Property(e => e.Outro).HasMaxLength(1000);
             entity.Property(e => e.ServiceName).HasMaxLength(100);
-            entity.Property(e => e.TopPrice)
-                .HasColumnType("decimal(18, 2)")
-                .HasColumnName("topPrice");
+            entity.Property(e => e.TopPrice).HasColumnName("topPrice");
 
             entity.HasOne(d => d.Account).WithMany(p => p.Daservices)
                 .HasForeignKey(d => d.AccountId)
@@ -148,7 +143,7 @@ public partial class DasContext : DbContext
 
         modelBuilder.Entity<Role>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Roles__3214EC2744CBF4EC");
+            entity.HasKey(e => e.Id).HasName("PK__Roles__3214EC27A79C29A7");
 
             entity.Property(e => e.Id)
                 .ValueGeneratedNever()
@@ -161,7 +156,7 @@ public partial class DasContext : DbContext
 
         modelBuilder.Entity<Slot>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Slot__3214EC2773F76188");
+            entity.HasKey(e => e.Id).HasName("PK__Slot__3214EC27FF8C3229");
 
             entity.ToTable("Slot");
 
@@ -174,6 +169,9 @@ public partial class DasContext : DbContext
                 .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasColumnName("dayInWeek");
+            entity.Property(e => e.DoctorName)
+                .HasMaxLength(100)
+                .HasColumnName("doctorName");
             entity.Property(e => e.SlotNo).HasColumnName("slotNo");
             entity.Property(e => e.SlotStatus)
                 .HasMaxLength(100)
@@ -187,7 +185,7 @@ public partial class DasContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Users__3214EC2793D65D4D");
+            entity.HasKey(e => e.Id).HasName("PK__Users__3214EC275FE63D06");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.Descriptions).HasMaxLength(100);

@@ -19,6 +19,8 @@ public partial class Booking
 
     public int? SlotId { get; set; }
 
+    public int? TotalPrice { get; set; }
+
     public virtual Account? Account { get; set; }
 
     public virtual ICollection<BookingDetail> BookingDetails { get; } = new List<BookingDetail>();

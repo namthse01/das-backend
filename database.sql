@@ -6,13 +6,13 @@ CREATE TABLE Users( ID INT IDENTITY(1,1) PRIMARY KEY, UserName NVARCHAR(100), Ph
 
 CREATE TABLE Account( ID INT IDENTITY(1,1) PRIMARY KEY, userId INT, Username NVARCHAR(100) UNIQUE, Password VARCHAR(100), roleId INT, accountStatus VARCHAR(100), workingStatus VARCHAR(100))
 
-CREATE TABLE DAServices( ID INT IDENTITY(1,1) PRIMARY KEY, ServiceName NVARCHAR(100), Intro NVARCHAR(1000), Contents NVARCHAR(1000), Outro NVARCHAR(1000), lowPrice DECIMAL(18,2), advancedPrice DECIMAL(18,2), topPrice DECIMAL(18,2), imgUrl VARCHAR(100), accountId INT, ServiceIsActive INT)
+CREATE TABLE DAServices( ID INT IDENTITY(1,1) PRIMARY KEY, ServiceName NVARCHAR(100), Intro NVARCHAR(1000), Contents NVARCHAR(1000), Outro NVARCHAR(1000), lowPrice INT, advancedPrice INT, topPrice INT, imgUrl VARCHAR(100), accountId INT, ServiceIsActive INT)
 
-CREATE TABLE Booking( ID INT IDENTITY(1,1) PRIMARY KEY, CustomerName NVARCHAR(100), phoneNo NVARCHAR(100), Gender NVARCHAR(100),bookingStatus VARCHAR(100), accountId INT, slotId INT) 
+CREATE TABLE Booking( ID INT IDENTITY(1,1) PRIMARY KEY, CustomerName NVARCHAR(100), phoneNo NVARCHAR(100), Gender NVARCHAR(100),bookingStatus VARCHAR(100), accountId INT, slotId INT, totalPrice INT) 
 
 CREATE TABLE BookingDetail (ID INT IDENTITY(1,1) PRIMARY KEY, bookingId INT, serviceId INT)
 
-CREATE TABLE Slot (ID INT IDENTITY(1,1) PRIMARY KEY, slotNo INT,slotStatus VARCHAR(100), date Datetime,dayInWeek VARCHAR(100) ,accountId INT)
+CREATE TABLE Slot (ID INT IDENTITY(1,1) PRIMARY KEY, slotNo INT,slotStatus VARCHAR(100), date Datetime,dayInWeek VARCHAR(100) ,accountId INT, doctorName NVARCHAR(100))
 
 CREATE TABLE Roles (ID INT PRIMARY KEY, roleName VARCHAR(100))
 
@@ -71,10 +71,10 @@ INSERT INTO Users(UserName, PhoneNum, Gender)
 VALUES ('Minh Tâm','0396234282', 'Nữ');
 
 INSERT INTO Users(UserName, PhoneNum, Gender)
-VALUES ('Đỗ Khải','0396234252', 'Nam');
+VALUES ('Đô Khải','0396234252', 'Nam');
 
 INSERT INTO Users(UserName, PhoneNum, Gender)
-VALUES ('Hồng Hạnh','0394853156', 'Nữ');
+VALUES ('Hoa Hạnh','0394853156', 'Nữ');
 
 INSERT INTO Users(UserName, PhoneNum, Gender)
 VALUES ('Hoàng Linh','039485756', 'Nữ');
@@ -127,15 +127,3 @@ VALUES('Hygeine & Periodontal Health',
 'Our Hygiene & Periodontal Health service is designed to prevent and treat gum disease, also known as periodontal disease. Our skilled dental hygienists specialize in gentle yet thorough cleanings to remove plaque, tartar, and bacteria that can lead to gum issues. Regular appointments for hygiene maintenance play a crucial role in preventing gum disease, ensuring that your gums remain pink, firm, and free from inflammation. We also provide personalized guidance on maintaining proper oral hygiene practices at home to further promote your gum health.',
 'Invest in the well-being of your gums and smile with our Hygiene & Periodontal Health service at King''s Teeth Dental Clinic. Your comfort and oral health are our priorities, and we''re here to offer you the expertise and care needed to keep your gums in optimal condition. Schedule your appointment today to experience the benefits of a clean, healthy mouth that contributes to overall wellness and the confidence of a beautiful smile.',
 3000000,3500000,5000000,1,1)
-
-INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
-VALUES(1,'Open','20230821 10:34:09 AM','Mon',5)
-
-INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
-VALUES(2,'Open','20230828 10:34:09 AM','Mon',5)
-
-INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
-VALUES(3,'Open','20230814 10:34:09 AM','Mon',5)
-
-INSERT INTO Slot(slotNo,slotStatus, date, dayInWeek, accountId)
-VALUES(4,'Open','20230807 10:34:09 AM','Mon',5)

@@ -23,6 +23,9 @@ namespace DASBackEnd.Services
                 Outro = addUpdateServicesDTO.Outro,
                 Contents = addUpdateServicesDTO.Contents,
                 AccountId = addUpdateServicesDTO.AccountId,
+                LowPrice = addUpdateServicesDTO.lowPrice,
+                AdvancedPrice = addUpdateServicesDTO.advancedPrice,
+                TopPrice = addUpdateServicesDTO.topPrice,
                 ServiceIsActive = 1,
             };
             await _servicesRepository.CreateServiceAsync(daservice);

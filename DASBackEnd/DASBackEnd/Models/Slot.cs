@@ -17,6 +17,8 @@ public partial class Slot
 
     public int? AccountId { get; set; }
 
+    public string? DoctorName { get; set; }
+
     public virtual Account? Account { get; set; }
 
     public virtual ICollection<Booking> Bookings { get; } = new List<Booking>();

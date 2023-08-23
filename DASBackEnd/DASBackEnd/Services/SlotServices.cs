@@ -38,7 +38,8 @@ namespace DASBackEnd.Services
                             DayInWeek = doctorToSlotDTO.DayInWeek,
                             AccountId = doctorToSlotDTO.AccountId,
                             Date = date,
-                            SlotStatus = "Open"
+                            SlotStatus = "Open",
+                            DoctorName = doctorToSlotDTO.doctocName
                         };
                         await _slotRepository.CreateSlotAsync(slot);
                     }
@@ -57,7 +58,8 @@ namespace DASBackEnd.Services
                             DayInWeek = doctorToSlotDTO.DayInWeek,
                             AccountId = doctorToSlotDTO.AccountId,
                             Date = date,
-                            SlotStatus = "Open"
+                            SlotStatus = "Open",
+                            DoctorName = doctorToSlotDTO.doctocName
                         };
                         await _slotRepository.CreateSlotAsync(slot);
                     }
@@ -76,7 +78,8 @@ namespace DASBackEnd.Services
                             DayInWeek = doctorToSlotDTO.DayInWeek,
                             AccountId = doctorToSlotDTO.AccountId,
                             Date = date,
-                            SlotStatus = "Open"
+                            SlotStatus = "Open",
+                            DoctorName = doctorToSlotDTO.doctocName
                         };
                         await _slotRepository.CreateSlotAsync(slot);
                     }
@@ -95,7 +98,8 @@ namespace DASBackEnd.Services
                             DayInWeek = doctorToSlotDTO.DayInWeek,
                             AccountId = doctorToSlotDTO.AccountId,
                             Date = date,
-                            SlotStatus = "Open"
+                            SlotStatus = "Open",
+                            DoctorName = doctorToSlotDTO.doctocName
                         };
                         await _slotRepository.CreateSlotAsync(slot);
                     }
@@ -112,9 +116,10 @@ namespace DASBackEnd.Services
                         {
                             SlotNo = slotNo,
                             DayInWeek = doctorToSlotDTO.DayInWeek,
-                            AccountId = doctorToSlotDTO.AccountId,
+                            AccountId = doctorToSlotDTO.AccountId,  
                             Date = date,
-                            SlotStatus = "Open"
+                            SlotStatus = "Open",
+                            DoctorName = doctorToSlotDTO.doctocName
                         };
                         await _slotRepository.CreateSlotAsync(slot);
                     }

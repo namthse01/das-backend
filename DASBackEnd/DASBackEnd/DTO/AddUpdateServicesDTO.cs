@@ -9,6 +9,9 @@
         public int? ServiceIsActive { get; set; }
 
         public string? Contents { get; set; }
+        public int? lowPrice { get; set; }
+        public int? advancedPrice { get; set; }
+        public int? topPrice { get; set; }
 
         public string? Outro { get; set; }
         public int AccountId { get; set; }

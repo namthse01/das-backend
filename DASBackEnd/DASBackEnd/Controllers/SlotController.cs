@@ -72,24 +72,8 @@ namespace DASBackEnd.Controllers
         {
             try
             {
-         /*       List<Slot> slot = _SlotRepository.GetAllSlot();
-                var dates = AllDatesInMonth(2023, doctorToSlotDTO.month).Where(i => i.DayOfWeek == DayOfWeek.Monday);*/
                 if (doctorToSlotDTO.roleId == 4) {
-                    await _IslotServices.CreateSlotAsync(doctorToSlotDTO);
-               /*     foreach (Slot slotItem in slot)
-                    {
-                        foreach (DateTime date in dates)
-                        {
-                            if (slotItem.Date == date)
-                            {
-                                break;
-                            }
-                            else
-                            {
-
-                            }
-                        }
-                    }*/
+                    await _IslotServices.CreateSlotAsync(doctorToSlotDTO);    
                 }
                 else
                 {

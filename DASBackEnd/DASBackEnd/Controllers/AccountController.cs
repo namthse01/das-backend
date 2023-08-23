@@ -158,7 +158,7 @@ namespace DASBackEnd.Controllers
             }
             else
             {
-                return await _DasContext.Accounts.Where(x => x.RoleId == 4).ToListAsync();
+                return await _DasContext.Accounts.Include(x=> x.User).Where(x => x.RoleId == 4).ToListAsync();
             }
 
         }
