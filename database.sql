@@ -53,31 +53,31 @@ INSERT INTO Roles(ID, roleName)
 VALUES (4,'doctor');
 
 INSERT INTO Users(UserName, PhoneNum, Gender)
-VALUES ('Hoàng Nam','0396258901', 'Nam');
+VALUES ('Hoàng Nam','0396258901', 'Male');
 
 INSERT INTO Users(UserName, PhoneNum, Gender)
-VALUES ('Hoàng Minh','0396258102', 'Nam');
+VALUES ('Hoàng Minh','0396258102', 'Male');
 
 INSERT INTO Users(UserName, PhoneNum, Gender)
-VALUES ('Nguyễn Tuân','0396218112', 'Nam');
+VALUES ('Nguyễn Tuân','0396218112', 'Male');
 
 INSERT INTO Users(UserName, PhoneNum, Gender)
-VALUES ('Hoàng Hiếu','0396244312', 'Nam');
+VALUES ('Hoàng Hiếu','0396244312', 'Male');
 
 INSERT INTO Users(UserName, PhoneNum, Gender)
-VALUES ('Thanh Tùng','0396224222', 'Nam');
+VALUES ('Thanh Tùng','0396224222', 'Male');
 
 INSERT INTO Users(UserName, PhoneNum, Gender)
-VALUES ('Minh Tâm','0396234282', 'Nữ');
+VALUES ('Minh Tâm','0396234282', 'Female');
 
 INSERT INTO Users(UserName, PhoneNum, Gender)
-VALUES ('Đô Khải','0396234252', 'Nam');
+VALUES ('Đô Khải','0396234252', 'Female');
 
 INSERT INTO Users(UserName, PhoneNum, Gender)
-VALUES ('Hoa Hạnh','0394853156', 'Nữ');
+VALUES ('Hoa Hạnh','0394853156', 'Female');
 
 INSERT INTO Users(UserName, PhoneNum, Gender)
-VALUES ('Hoàng Linh','039485756', 'Nữ');
+VALUES ('Hoàng Linh','039485756', 'Female');
 
 
 INSERT INTO Account(roleId, userId, Username, Password, workingStatus, accountStatus)
