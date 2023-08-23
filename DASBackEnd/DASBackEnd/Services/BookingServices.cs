@@ -39,7 +39,8 @@ namespace DASBackEnd.Services
                     BookingDetail bookingDetail = new BookingDetail()
                     {
                         BookingId = booking.Id,
-                        ServiceId = item.serviceId
+                        ServiceId = item.serviceId,
+                        ServiceType = item.serviceType
                     };
                     _bookingDetailRepository.CreateBookingDetailAsync(bookingDetail);
                 }

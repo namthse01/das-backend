@@ -10,7 +10,7 @@ CREATE TABLE DAServices( ID INT IDENTITY(1,1) PRIMARY KEY, ServiceName NVARCHAR(
 
 CREATE TABLE Booking( ID INT IDENTITY(1,1) PRIMARY KEY, CustomerName NVARCHAR(100), phoneNo NVARCHAR(100), Gender NVARCHAR(100),bookingStatus VARCHAR(100), accountId INT, slotId INT, totalPrice INT) 
 
-CREATE TABLE BookingDetail (ID INT IDENTITY(1,1) PRIMARY KEY, bookingId INT, serviceId INT)
+CREATE TABLE BookingDetail (ID INT IDENTITY(1,1) PRIMARY KEY, bookingId INT, serviceId INT, serviceType VARCHAR(100))
 
 CREATE TABLE Slot (ID INT IDENTITY(1,1) PRIMARY KEY, slotNo INT,slotStatus VARCHAR(100), date Datetime,dayInWeek VARCHAR(100) ,accountId INT, doctorName NVARCHAR(100))
 

@@ -11,6 +11,8 @@ public partial class BookingDetail
 
     public int? ServiceId { get; set; }
 
+    public string? ServiceType { get; set; }
+
     public virtual Booking? Booking { get; set; }
 
     public virtual Daservice? Service { get; set; }
