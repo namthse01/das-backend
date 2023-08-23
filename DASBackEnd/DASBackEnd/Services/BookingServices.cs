@@ -28,6 +28,7 @@ namespace DASBackEnd.Services
                 booking.SlotId = customerCreateBookingDTO.slotId;
                 booking.Gender = customerCreateBookingDTO.gender;
                 booking.PhoneNo = customerCreateBookingDTO.phoneNum;
+                booking.TotalPrice = customerCreateBookingDTO.totalPrice;
 
             if (booking.CustomerName != null && booking.PhoneNo != null && booking.AccountId != null) 
             {
