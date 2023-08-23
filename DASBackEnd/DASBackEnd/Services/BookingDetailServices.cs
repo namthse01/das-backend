@@ -27,7 +27,7 @@ namespace DASBackEnd.Services
                 {
                     bookingId = item.Booking.Id,
                     serviceId = item.Service.Id,
-                    ServiceName = item.Service.ServiceName
+                    ServiceType = item.ServiceType
                 };
                 servciesDTO.Add(data);
 
@@ -41,7 +41,7 @@ namespace DASBackEnd.Services
                 Gender = book.Gender,
                 doctorId = slot.AccountId,
                 slotId = slot.Id,
-                doctorName = slot.Account.Username,
+                doctorName = slot.DoctorName,
                 listServicesBooking = servciesDTO
             };
          

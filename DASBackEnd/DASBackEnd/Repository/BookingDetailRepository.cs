@@ -29,7 +29,7 @@ namespace DASBackEnd.Repository
 
         public Booking customerGetBookingDetailByBookingId(int bookingId)
         {
-            Booking book = dasContext.Bookings.Where(x => x.Id == bookingId).FirstOrDefault();
+            Booking book = dasContext.Bookings.Include(x=>x.BookingDetails).Where(x => x.Id == bookingId).FirstOrDefault();
 
             return book;
         }

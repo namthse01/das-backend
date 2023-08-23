@@ -4,6 +4,6 @@
     {
         public int bookingId { get; set; }
         public int serviceId { get; set; }
-        public string ServiceName { get; set; }
+        public string ServiceType { get; set; }
     }
 }
