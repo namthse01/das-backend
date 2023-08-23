@@ -27,7 +27,8 @@ namespace DASBackEnd.Services
                 {
                     bookingId = item.Booking.Id,
                     serviceId = item.Service.Id,
-                    ServiceType = item.ServiceType
+                    serviceType = item.ServiceType,
+                    serviceName = item.Service.ServiceName
                 };
                 servciesDTO.Add(data);
 
