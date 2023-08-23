@@ -43,7 +43,8 @@ namespace DASBackEnd.Services
                 doctorId = slot.AccountId,
                 slotId = slot.Id,
                 doctorName = slot.DoctorName,
-                listServicesBooking = servciesDTO
+                listServicesBooking = servciesDTO,
+                totalPrice = (int)book.TotalPrice
             };
          
             return bookingDetailDTO;
