@@ -27,7 +27,7 @@ namespace DASBackEnd.Services
                 AdvancedPrice = addUpdateServicesDTO.advancedPrice,
                 TopPrice = addUpdateServicesDTO.topPrice,
                 ServiceIsActive = 1,
-                Rating = addUpdateServicesDTO.Rating,
+      /*          Rating = addUpdateServicesDTO.Rating,*/
             };
             await _servicesRepository.CreateServiceAsync(daservice);
             return daservice;

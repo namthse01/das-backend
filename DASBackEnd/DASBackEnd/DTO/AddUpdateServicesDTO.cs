@@ -7,7 +7,7 @@
         public string? Intro { get; set; }
 
         public int? ServiceIsActive { get; set; }
-        public int? Rating { get; set; }
+/*        public int? Rating { get; set; }*/
         public string? Contents { get; set; }
         public int? lowPrice { get; set; }
         public int? advancedPrice { get; set; }
