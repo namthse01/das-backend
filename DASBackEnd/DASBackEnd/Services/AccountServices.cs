@@ -27,6 +27,21 @@ namespace DASBackEnd.Services
             return addUpdateAccountDTO;
         }
 
+        public AdminUpdateAccountDTO AdminUpdateAccount(AdminUpdateAccountDTO addUpdateAccountDTO)
+        {
+            Account account = _AccountRepository.findAccountById(addUpdateAccountDTO.accountId);
+            User user = _AccountRepository.findUserById((int)account.UserId);
+            /*            account.Username = addUpdateAccountDTO.Username;
+                        account.Password = addUpdateAccountDTO.Password;*/
+            account.WorkingStatus = addUpdateAccountDTO.WorkingStatus;
+            account.AccountStatus = addUpdateAccountDTO.AccountStatus;
+            user.Gender = addUpdateAccountDTO.Gender;
+            user.UserName = addUpdateAccountDTO.FullName;
+            user.PhoneNum = addUpdateAccountDTO.PhoneNum;
+            _AccountRepository.AdminupdateAccountById(account, user);
+            return addUpdateAccountDTO;
+        }
+
         public Account checkAccountExist(loginDTO loginDTO)
         {
             Account account = _AccountRepository.checkAccountExist(loginDTO);

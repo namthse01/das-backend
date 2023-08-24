@@ -8,5 +8,6 @@ namespace DASBackEnd.IServices
 
         public AddUpdateAccountDTO updateDoctorWorkingStatusById(AddUpdateAccountDTO addUpdateAccountDTO);
         public Account checkAccountExist(loginDTO loginDTO);
+        public AdminUpdateAccountDTO AdminUpdateAccount(AdminUpdateAccountDTO addUpdateAccountDTO);
     }
 }

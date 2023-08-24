@@ -31,7 +31,7 @@ namespace DASBackEnd.Controllers
             }
             else
             {
-                return await _DasContext.Accounts.ToListAsync();
+                return await _DasContext.Accounts.Include(x=>x.User).ToListAsync();
             }
 
         }
@@ -144,7 +144,7 @@ namespace DASBackEnd.Controllers
             }
             else
             {
-                return await _DasContext.Accounts.Where(x => x.RoleId == 3).ToListAsync();
+                return await _DasContext.Accounts.Include(x=>x.User).Where(x => x.RoleId == 3).ToListAsync();
             }
 
         }
@@ -174,7 +174,7 @@ namespace DASBackEnd.Controllers
             }
             else
             {
-                return await _DasContext.Accounts.Where(x => x.RoleId == 2).ToListAsync();
+                return await _DasContext.Accounts.Include(x=>x.User).Where(x => x.RoleId == 2).ToListAsync();
             }
 
         }
@@ -203,6 +203,23 @@ namespace DASBackEnd.Controllers
             try
             {
                 AddUpdateAccountDTO addUpdateAccountDTO = _accountServices.updateDoctorWorkingStatusById(objAccount);
+
+                return Ok(addUpdateAccountDTO);
+            }
+            catch (Exception)
+            {
+
+                return BadRequest("Đã xảy ra lỗi trong quá trình update tài khoản, vui lòng thử lại. ");
+            }
+        }
+
+        [HttpPatch]
+        [Route("AdminUpdateAccountByAccountId")]
+        public IActionResult AdminUpdateAccount(AdminUpdateAccountDTO account)
+        {
+            try
+            {
+                AdminUpdateAccountDTO addUpdateAccountDTO = _accountServices.AdminUpdateAccount(account);
 
                 return Ok(addUpdateAccountDTO);
             }
