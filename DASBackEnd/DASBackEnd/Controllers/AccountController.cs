@@ -47,7 +47,8 @@ namespace DASBackEnd.Controllers
                     User user = new User()
                     {
                         Gender = registerCustomerDTO.Gender,
-                        PhoneNum = registerCustomerDTO.PhoneNum
+                        PhoneNum = registerCustomerDTO.PhoneNum,
+                        UserName = registerCustomerDTO.FullName,
                     };
                     _DasContext.Users.Add(user);
                     _DasContext.SaveChanges();
@@ -83,7 +84,7 @@ namespace DASBackEnd.Controllers
             {
                 User user = new User()
                 {
-                    UserName = addUpdateAccountDTO.Username,
+                    UserName = addUpdateAccountDTO.FullName,
                     Gender = addUpdateAccountDTO.Gender,
                     PhoneNum = addUpdateAccountDTO.PhoneNum
                 };
