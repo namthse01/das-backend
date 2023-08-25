@@ -24,6 +24,8 @@ namespace DASBackEnd.Repository
 
         public void updateAccountById(Account account)
         {
+            dasContext.Entry(account).Property(p => p.WorkingStatus).IsModified = account.WorkingStatus != null && account.WorkingStatus != "";
+            dasContext.Entry(account).Property(p => p.AccountStatus).IsModified = account.AccountStatus != null && account.AccountStatus != "";
             dasContext.Accounts.Update(account);
             dasContext.SaveChanges();
         }

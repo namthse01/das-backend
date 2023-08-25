@@ -6,7 +6,7 @@ namespace DASBackEnd.IServices
     public interface IAccountServices
     {
 
-        public AddUpdateAccountDTO updateDoctorWorkingStatusById(AddUpdateAccountDTO addUpdateAccountDTO);
+        public DoctorWorkingStatusDTO updateDoctorWorkingStatusById(DoctorWorkingStatusDTO addUpdateAccountDTO);
         public Account checkAccountExist(loginDTO loginDTO);
         public AdminUpdateAccountDTO AdminUpdateAccount(AdminUpdateAccountDTO addUpdateAccountDTO);
     }
