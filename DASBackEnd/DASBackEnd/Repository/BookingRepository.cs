@@ -40,6 +40,12 @@ namespace DASBackEnd.Repository
             return booking;
         }
 
+        public List<Booking> GetAllBookingByDoctor(int id)
+        {
+            List<Booking> booking = dbContext.Bookings.Include(x => x.Slot).Where(x => x.Slot.AccountId == id).ToList();
+            return booking;
+        }
+
         public Booking managerUpdateBookingStatus(int bookingId, string bookingStatus)
         {
             Booking booking = dbContext.Bookings.FirstOrDefault(x => x.Id == bookingId);

@@ -72,6 +72,20 @@ namespace DASBackEnd.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("getListBookingByDoctorByDoctorID")]
+        public IActionResult getlistBookingByDoctor(int id)
+        {
+            try
+            {
+                List<Booking> list = iBookingServices.doctorGetAllBookingByDoctorId(id);
+                return Ok(list);
+            }
+            catch(Exception)
+            {
+                return BadRequest("Đã xảy ra lỗi khi lấy thông tin.");
+            }
+        }
 
         [HttpPatch]
         [Route("ManagerUpdateBookStatus/bookingId/{id}")]

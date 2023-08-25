@@ -65,6 +65,12 @@ namespace DASBackEnd.Services
             return list;
         }
 
+        public List<Booking> doctorGetAllBookingByDoctorId(int id)
+        {
+            List<Booking> list = _bookingRepository.GetAllBookingByDoctor(id);
+            return list;
+        }
+
         public Booking updateBookStatusByBookingId(int bookingId, string bookingStatus)
         {
             Booking booking = _bookingRepository.managerUpdateBookingStatus(bookingId, bookingStatus);
